@@ -1,0 +1,408 @@
+<!DOCTYPE html><html lang="en" class="no-js"><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Learn ES2015 · Babel</title><meta name="description" content="The compiler for writing next generation JavaScript"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css"><link rel="stylesheet" href="/css/main.css?t=2017-10-31T07:11:31+00:00"><link rel="canonical" href="https://babeljs.io/learn-es2015/"><link rel="alternate" type="application/rss+xml" title="Babel" href="https://babeljs.io/feed.xml" /><link rel="icon" href="/favicon.ico" type="image/x-icon"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16"><link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><meta name="msapplication-TileColor" content="#da532c"><meta name="theme-color" content="#ffffff"><meta name="og:url" content="https://babeljs.io/"><meta name="og:image" content="website"><meta name="og:title" content="Learn ES2015 · Babel"><meta name="og:description" content="The compiler for writing next generation JavaScript"><meta name="og:image" content="https://babeljs.io/images/share-image.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@babeljs"><meta name="twitter:title" content="Learn ES2015 · Babel"><meta name="twitter:description" content="The compiler for writing next generation JavaScript"><meta name="twitter:image:src" content="https://babeljs.io/images/share-image.png"><meta name="twitter:url" content="https://babeljs.io/learn-es2015/"></head><input type="checkbox" id="babel-toggle-search" class="babel-toggle-search-checkbox" /><header class="navbar navbar-default navbar-fixed-top babel-nav" id="top" role="banner"><div class="container"> <a href="/" class="navbar-brand logo">Babel</a><div class="babel-navbar-toggles"><div class="navbar-header"> <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#babel-navbar" aria-controls="babel-navbar" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> <label for="babel-toggle-search" class="navbar-toggle babel-toggle-search-open"> <span class="sr-only">Open search</span> <span class="glyphicon glyphicon-search" aria-hidden="true"></span> </label></div></div><nav id="babel-navbar" class="collapse navbar-collapse babel-navbar"><ul class="nav navbar-nav"><li class="active"> <a href="/learn-es2015/">学习 ES2015</a></li><li class="dropdown "> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">文档 <span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li > <a href="/docs/setup/">配置</a></li><li > <a href="/docs/editors">编辑器</a></li><li > <a href="/docs/usage/caveats/">注意事项</a></li><li > <a href="/docs/community/videos/">视频</a></li><li class="group-name">相关依赖</li><li > <a href="/docs/core-packages/">babel-core</a></li><li > <a href="/docs/usage/polyfill/">babel-polyfill</a></li><li > <a href="/docs/plugins/">Plugins</a></li><li class="group-name">使用方式</li><li > <a href="/docs/usage/babelrc/">.babelrc</a></li><li > <a href="/docs/usage/cli/">babel-cli</a></li><li > <a href="/docs/usage/babel-register/">babel-register</a></li><li > <a href="/docs/usage/api/">API</a></li></ul></li><li > <a href="/repl/">试用</a></li><li > <a href="/blog/">Blog</a></li><li > <a href="/faq">常见问题</a></li><li > <a href="/team">团队</a></li><li class="dropdown "> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">友情链接 <span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li > <a href="https://docschina.org/">印记中文</a></li><li > <a href="https://vuefe.cn/">Vue.js 中文</a></li><li > <a href="https://doc.react-china.org/">React.js 中文</a></li><li > <a href="https://rollupjs.org/zh">Rollup.js 中文</a></li><li > <a href="http://nodejs.cn/">Node.js 中文</a></li><li > <a href="https://doc.webpack-china.org/">Webpack 中文</a></li></ul></li></ul><ul class="nav navbar-nav navbar-right nav-social"><li> <a href="https://opencollective.com/babel">赞助</a></li><li> <a href="https://discuss.babeljs.io">论坛</a></li><li> <a href="https://slack.babeljs.io/" title="Join us on Slack"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect x="219.27" y="221.3" width="72.04" height="69.58" transform="translate(-67.42 94.64) rotate(-18.52)"/><path d="M489.84,185.3C437,9.29,360.9-31.64,184.9,21.16S-32,150.1,20.76,326.1,149.7,543,325.7,490.24,542.64,361.3,489.84,185.3ZM401,299.5l-33.15,11.05,11.46,34.38c4.5,13.92-2.87,29.06-16.78,33.56-2.87.82-6.14,1.64-9,1.23a27.32,27.32,0,0,1-24.56-18l-11.46-34.38-68.36,22.92,11.46,34.38c4.5,13.92-2.87,29.06-16.78,33.56-2.87.82-6.14,1.64-9,1.23a27.32,27.32,0,0,1-24.56-18L198.81,367l-33.15,11.05c-2.87.82-6.14,1.64-9,1.23a27.32,27.32,0,0,1-24.56-18c-4.5-13.92,2.87-29.06,16.78-33.56L182,316.69l-22.1-65.9-33.15,11.05c-2.87.82-6.14,1.64-9,1.23a27.32,27.32,0,0,1-24.56-18C88.71,231.14,96.08,216,110,211.49l33.15-11.05-11.46-34.38c-4.5-13.92,2.87-29.06,16.78-33.56s29.06,2.87,33.56,16.78l11.46,34.38,68.36-22.92-11.46-34.38c-4.5-13.92,2.87-29.06,16.78-33.56s29.06,2.87,33.56,16.78L312.2,144l33.15-11.05c13.92-4.5,29.06,2.87,33.56,16.78s-2.87,29.06-16.78,33.56L329,194.3l22.1,65.9,33.15-11.05c13.92-4.5,29.06,2.87,33.56,16.78S414.93,295,401,299.5Z" transform="translate(0.7 0.3)"/></svg> </a></li><li> <a href="https://twitter.com/babeljs" title="Follow us on Twitter"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 416.32"><title>twitter</title><path d="M160.83,464.16c193.2,0,298.92-160.22,298.92-298.92,0-4.51,0-9-.2-13.52A214,214,0,0,0,512,97.22a212.93,212.93,0,0,1-60.44,16.6,105.7,105.7,0,0,0,46.3-58.19A209,209,0,0,1,431.07,81a105.09,105.09,0,0,0-181.73,71.91,116.12,116.12,0,0,0,2.66,24c-87.28-4.3-164.73-46.3-216.56-109.82A105.48,105.48,0,0,0,68,207.44a106.27,106.27,0,0,1-47.53-13.11v1.43a105.28,105.28,0,0,0,84.21,103.06,105.67,105.67,0,0,1-47.33,1.84,105.06,105.06,0,0,0,98.14,72.94A210.72,210.72,0,0,1,25,418.68a202.17,202.17,0,0,1-25-1.43,298.85,298.85,0,0,0,160.83,46.92" transform="translate(0 -47.84)" fill="#010101"/></svg> </a></li><li> <a href="https://github.com/babel/babel" title="Contribute on GitHub"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 499.36"><path d="M256,6.32c-141.36,0-256,114.61-256,256,0,113.09,73.34,209,175.08,242.9,12.8,2.35,17.47-5.56,17.47-12.34,0-6.08-.22-22.18-.35-43.54C121,464.83,106,415,106,415c-11.64-29.57-28.42-37.45-28.42-37.45C54.31,361.71,79.31,362,79.31,362c25.69,1.81,39.21,26.38,39.21,26.38,22.84,39.12,59.92,27.82,74.5,21.27,2.33-16.54,8.94-27.82,16.25-34.22C152.43,369,92.67,347,92.67,248.94c0-27.95,10-50.8,26.35-68.69-2.63-6.48-11.42-32.5,2.51-67.75,0,0,21.49-6.88,70.4,26.24a242.65,242.65,0,0,1,128.18,0c48.87-33.13,70.33-26.24,70.33-26.24,14,35.25,5.18,61.27,2.55,67.75,16.41,17.9,26.31,40.75,26.31,68.69,0,98.35-59.85,120-116.88,126.32,9.19,7.9,17.38,23.53,17.38,47.41,0,34.22-.31,61.83-.31,70.23,0,6.85,4.61,14.81,17.6,12.31C438.72,471.29,512,375.4,512,262.34,512,120.94,397.37,6.32,256,6.32Z" transform="translate(0 -6.32)" fill="#191717" fill-rule="evenodd"/></svg> </a></li></ul><label for="babel-toggle-search" class="navbar-toggle babel-toggle-search-open"> <span class="sr-only">打开搜索</span> <span class="glyphicon glyphicon-search" aria-hidden="true"></span> </label><div class="navbar-form navbar-right babel-search" role="search"><div class="input-group"> <label class="sr-only" aria-label="Search" for="babel-search-input">搜索</label><div class="babel-search-input-wrapper"> <input type="text" class="form-control" id="babel-search-input" accesskey="s" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="在文档中搜索..."> <label for="babel-toggle-search" class="babel-toggle-search-close"> <span class="sr-only">关闭搜索</span> <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span> </label></div></div></div></nav></div></header><div class="docs-header"><div class="container"><div class="row"><div class="col-md-12"><h1>Learn ES2015</h1><p>A detailed overview of ECMAScript 2015 features. Based on Luke Hoban's es6features repo.</p><p class="package-links"> <a href="https://github.com/babel/website/blob/master/learn-es2015.md">Edit this page</a></p></div></div></div></div><div class="container"><div class="row"><div class="col-md-9 docs-content"><blockquote class="babel-callout babel-callout-info"><h3>es6features</h3><p> This document was originally taken from Luke Hoban's excellent <a href="https://git.io/es6features">es6features</a> repo. Go give it a star on GitHub!</p></blockquote><blockquote class="babel-callout babel-callout-info"><h4>REPL</h4><p> Be sure to try these features out in the online <a href="/repl">REPL</a>.</p></blockquote><h2 id="introduction">Introduction</h2><blockquote><p>ECMAScript 2015 is an ECMAScript standard that was ratified in June 2015.</p></blockquote><p>ES2015 is a significant update to the language, and the first major update to the language since ES5 was standardized in 2009. Implementation of these features in major JavaScript engines is <a href="https://kangax.github.io/es5-compat-table/es6/">underway now</a>.</p><p>See the <a href="http://www.ecma-international.org/ecma-262/6.0/index.html">ES2015 standard</a> for full specification of the ECMAScript 2015 language.</p><h2 id="ecmascript-2015-features">ECMAScript 2015 Features</h2><p><a id="arrows"></a></p><h3 id="arrows-and-lexical-this">Arrows and Lexical This</h3><p>Arrows are a function shorthand using the <code class="highlighter-rouge">=&gt;</code> syntax. They are syntactically similar to the related feature in C#, Java 8 and CoffeeScript. They support both expression and statement bodies. Unlike functions, arrows share the same lexical <code class="highlighter-rouge">this</code> as their surrounding code. If an arrow is inside another function, it shares the “arguments” variable of its parent function.</p><div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="c1">// Expression bodies</span>
+<span class="kd">var</span> <span class="nx">odds</span> <span class="o">=</span> <span class="nx">evens</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">v</span> <span class="o">=&gt;</span> <span class="nx">v</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">nums</span> <span class="o">=</span> <span class="nx">evens</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">v</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">v</span> <span class="o">+</span> <span class="nx">i</span><span class="p">);</span>
+
+<span class="c1">// Statement bodies</span>
+<span class="nx">nums</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">v</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">v</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="nx">fives</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">v</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="c1">// Lexical this</span>
+<span class="kd">var</span> <span class="nx">bob</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">_name</span><span class="p">:</span> <span class="s2">"Bob"</span><span class="p">,</span>
+  <span class="na">_friends</span><span class="p">:</span> <span class="p">[],</span>
+  <span class="nx">printFriends</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">_friends</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">f</span> <span class="o">=&gt;</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">_name</span> <span class="o">+</span> <span class="s2">" knows "</span> <span class="o">+</span> <span class="nx">f</span><span class="p">));</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// Lexical arguments</span>
+<span class="kd">function</span> <span class="nx">square</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">example</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">numbers</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">number</span> <span class="nx">of</span> <span class="nx">arguments</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">numbers</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">number</span> <span class="o">*</span> <span class="nx">number</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="nx">numbers</span><span class="p">;</span>
+  <span class="p">};</span>
+
+  <span class="k">return</span> <span class="nx">example</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="nx">square</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mf">7.5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mf">11.5</span><span class="p">,</span> <span class="mi">21</span><span class="p">);</span> <span class="c1">// returns: [4, 16, 56.25, 64, 132.25, 441]</span>
+</code></pre></div><h3 id="classes">Classes</h3><p>ES2015 classes are a simple sugar over the prototype-based OO pattern. Having a single convenient declarative form makes class patterns easier to use, and encourages interoperability. Classes support prototype-based inheritance, super calls, instance and static methods and constructors.</p><div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">class</span> <span class="nx">SkinnedMesh</span> <span class="kr">extends</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Mesh</span> <span class="p">{</span>
+  <span class="nx">constructor</span><span class="p">(</span><span class="nx">geometry</span><span class="p">,</span> <span class="nx">materials</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kr">super</span><span class="p">(</span><span class="nx">geometry</span><span class="p">,</span> <span class="nx">materials</span><span class="p">);</span>
+
+    <span class="k">this</span><span class="p">.</span><span class="nx">idMatrix</span> <span class="o">=</span> <span class="nx">SkinnedMesh</span><span class="p">.</span><span class="nx">defaultMatrix</span><span class="p">();</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">bones</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">boneMatrices</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="c1">//...</span>
+  <span class="p">}</span>
+  <span class="nx">update</span><span class="p">(</span><span class="nx">camera</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//...</span>
+    <span class="kr">super</span><span class="p">.</span><span class="nx">update</span><span class="p">();</span>
+  <span class="p">}</span>
+  <span class="kr">static</span> <span class="nx">defaultMatrix</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Matrix4</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><h3 id="enhanced-object-literals">Enhanced Object Literals</h3><p>Object literals are extended to support setting the prototype at construction, shorthand for <code class="highlighter-rouge">foo: foo</code> assignments, defining methods and making super calls. Together, these also bring object literals and class declarations closer together, and let object-based design benefit from some of the same conveniences.</p><div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="c1">// Sets the prototype. "__proto__" or '__proto__' would also work.</span>
+    <span class="na">__proto__</span><span class="p">:</span> <span class="nx">theProtoObj</span><span class="p">,</span>
+    <span class="c1">// Computed property name does not set prototype or trigger early error for</span>
+    <span class="c1">// duplicate __proto__ properties.</span>
+    <span class="p">[</span><span class="s1">'__proto__'</span><span class="p">]:</span> <span class="nx">somethingElse</span><span class="p">,</span>
+    <span class="c1">// Shorthand for ‘handler: handler’</span>
+    <span class="nx">handler</span><span class="p">,</span>
+    <span class="c1">// Methods</span>
+    <span class="nx">toString</span><span class="p">()</span> <span class="p">{</span>
+     <span class="c1">// Super calls</span>
+     <span class="k">return</span> <span class="s2">"d "</span> <span class="o">+</span> <span class="kr">super</span><span class="p">.</span><span class="nx">toString</span><span class="p">();</span>
+    <span class="p">},</span>
+    <span class="c1">// Computed (dynamic) property names</span>
+    <span class="p">[</span> <span class="s2">"prop_"</span> <span class="o">+</span> <span class="p">(()</span> <span class="o">=&gt;</span> <span class="mi">42</span><span class="p">)()</span> <span class="p">]:</span> <span class="mi">42</span>
+<span class="p">};</span>
+</code></pre></div><blockquote class="babel-callout babel-callout-warning"><p> The <code>__proto__</code> property requires native support, and was deprecated in previous ECMAScript versions. Most engines now support the property, but <a href="https://kangax.github.io/compat-table/es6/#__proto___in_object_literals">some do not</a>. Also, note that only <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-additional-ecmascript-features-for-web-browsers">web browsers</a> are required to implement it, as it's in <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-object.prototype.__proto__">Annex B</a>. It is available in Node.</p></blockquote><h3 id="template-strings">Template Strings</h3><p>Template strings provide syntactic sugar for constructing strings. This is similar to string interpolation features in Perl, Python and more. Optionally, a tag can be added to allow the string construction to be customized, avoiding injection attacks or constructing higher level data structures from string contents.</p><div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="c1">// Basic literal string creation</span>
+<span class="err">`</span><span class="nx">This</span> <span class="nx">is</span> <span class="nx">a</span> <span class="nx">pretty</span> <span class="nx">little</span> <span class="nx">template</span> <span class="nx">string</span><span class="p">.</span><span class="err">`</span>
+
+<span class="c1">// Multiline strings</span>
+<span class="err">`</span><span class="nx">In</span> <span class="nx">ES5</span> <span class="k">this</span> <span class="nx">is</span>
+ <span class="nx">not</span> <span class="nx">legal</span><span class="p">.</span><span class="err">`</span>
+
+<span class="c1">// Interpolate variable bindings</span>
+<span class="kd">var</span> <span class="nx">name</span> <span class="o">=</span> <span class="s2">"Bob"</span><span class="p">,</span> <span class="nx">time</span> <span class="o">=</span> <span class="s2">"today"</span><span class="p">;</span>
+<span class="err">`</span><span class="nx">Hello</span> <span class="nx">$</span><span class="p">{</span><span class="nx">name</span><span class="p">},</span> <span class="nx">how</span> <span class="nx">are</span> <span class="nx">you</span> <span class="nx">$</span><span class="p">{</span><span class="nx">time</span><span class="p">}?</span><span class="err">`</span>
+
+<span class="c1">// Unescaped template strings</span>
+<span class="nb">String</span><span class="p">.</span><span class="nx">raw</span><span class="err">`</span><span class="nx">In</span> <span class="nx">ES5</span> <span class="s2">"\n"</span> <span class="nx">is</span> <span class="nx">a</span> <span class="nx">line</span><span class="o">-</span><span class="nx">feed</span><span class="p">.</span><span class="err">`</span>
+
+<span class="c1">// Construct an HTTP request prefix is used to interpret the replacements and construction</span>
+<span class="nx">GET</span><span class="err">`</span><span class="nx">http</span><span class="p">:</span><span class="c1">//foo.org/bar?a=${a}&amp;b=${b}</span>
+    <span class="nx">Content</span><span class="o">-</span><span class="nx">Type</span><span class="err">:</span> <span class="nx">application</span><span class="o">/</span><span class="nx">json</span>
+    <span class="nx">X</span><span class="o">-</span><span class="nx">Credentials</span><span class="err">:</span> <span class="nx">$</span><span class="p">{</span><span class="nx">credentials</span><span class="p">}</span>
+    <span class="p">{</span> <span class="s2">"foo"</span><span class="err">:</span> <span class="nx">$</span><span class="p">{</span><span class="nx">foo</span><span class="p">},</span>
+      <span class="s2">"bar"</span><span class="err">:</span> <span class="nx">$</span><span class="p">{</span><span class="nx">bar</span><span class="p">}}</span><span class="err">`</span><span class="p">(</span><span class="nx">myOnReadyStateChangeHandler</span><span class="p">);</span>
+</code></pre></div><h3 id="destructuring">Destructuring</h3><p>Destructuring allows binding using pattern matching, with support for matching arrays and objects. Destructuring is fail-soft, similar to standard object lookup <code class="highlighter-rouge">foo["bar"]</code>, producing <code class="highlighter-rouge">undefined</code> values when not found.</p><div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="c1">// list matching</span>
+<span class="kd">var</span> <span class="p">[</span><span class="nx">a</span><span class="p">,</span> <span class="p">,</span><span class="nx">b</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">];</span>
+<span class="nx">a</span> <span class="o">===</span> <span class="mi">1</span><span class="p">;</span>
+<span class="nx">b</span> <span class="o">===</span> <span class="mi">3</span><span class="p">;</span>
+
+<span class="c1">// object matching</span>
+<span class="kd">var</span> <span class="p">{</span> <span class="na">op</span><span class="p">:</span> <span class="nx">a</span><span class="p">,</span> <span class="na">lhs</span><span class="p">:</span> <span class="p">{</span> <span class="na">op</span><span class="p">:</span> <span class="nx">b</span> <span class="p">},</span> <span class="na">rhs</span><span class="p">:</span> <span class="nx">c</span> <span class="p">}</span>
+       <span class="o">=</span> <span class="nx">getASTNode</span><span class="p">()</span>
+
+<span class="c1">// object matching shorthand</span>
+<span class="c1">// binds `op`, `lhs` and `rhs` in scope</span>
+<span class="kd">var</span> <span class="p">{</span><span class="nx">op</span><span class="p">,</span> <span class="nx">lhs</span><span class="p">,</span> <span class="nx">rhs</span><span class="p">}</span> <span class="o">=</span> <span class="nx">getASTNode</span><span class="p">()</span>
+
+<span class="c1">// Can be used in parameter position</span>
+<span class="kd">function</span> <span class="nx">g</span><span class="p">({</span><span class="na">name</span><span class="p">:</span> <span class="nx">x</span><span class="p">})</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">g</span><span class="p">({</span><span class="na">name</span><span class="p">:</span> <span class="mi">5</span><span class="p">})</span>
+
+<span class="c1">// Fail-soft destructuring</span>
+<span class="kd">var</span> <span class="p">[</span><span class="nx">a</span><span class="p">]</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="nx">a</span> <span class="o">===</span> <span class="kc">undefined</span><span class="p">;</span>
+
+<span class="c1">// Fail-soft destructuring with defaults</span>
+<span class="kd">var</span> <span class="p">[</span><span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="nx">a</span> <span class="o">===</span> <span class="mi">1</span><span class="p">;</span>
+
+<span class="c1">// Destructuring + defaults arguments</span>
+<span class="kd">function</span> <span class="nx">r</span><span class="p">({</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">w</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="nx">h</span> <span class="o">=</span> <span class="mi">10</span><span class="p">})</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span> <span class="o">+</span> <span class="nx">w</span> <span class="o">+</span> <span class="nx">h</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">r</span><span class="p">({</span><span class="na">x</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="na">y</span><span class="p">:</span><span class="mi">2</span><span class="p">})</span> <span class="o">===</span> <span class="mi">23</span>
+</code></pre></div><h3 id="default--rest--spread">Default + Rest + Spread</h3><p>Callee-evaluated default parameter values. Turn an array into consecutive arguments in a function call. Bind trailing parameters to an array. Rest replaces the need for <code class="highlighter-rouge">arguments</code> and addresses common cases more directly.</p><div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">f</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// y is 12 if not passed (or passed as undefined)</span>
+  <span class="k">return</span> <span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">f</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="mi">15</span>
+</code></pre></div><div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">f</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="p">...</span><span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// y is an Array</span>
+  <span class="k">return</span> <span class="nx">x</span> <span class="o">*</span> <span class="nx">y</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">f</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s2">"hello"</span><span class="p">,</span> <span class="kc">true</span><span class="p">)</span> <span class="o">==</span> <span class="mi">6</span>
+</code></pre></div><div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">f</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">z</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span> <span class="o">+</span> <span class="nx">z</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// Pass each elem of array as argument</span>
+<span class="nx">f</span><span class="p">(...[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span> <span class="o">==</span> <span class="mi">6</span>
+</code></pre></div><h3 id="let--const">Let + Const</h3><p>Block-scoped binding constructs. <code class="highlighter-rouge">let</code> is the new <code class="highlighter-rouge">var</code>. <code class="highlighter-rouge">const</code> is single-assignment. Static restrictions prevent use before assignment.</p><div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">f</span><span class="p">()</span> <span class="p">{</span>
+  <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">x</span><span class="p">;</span>
+    <span class="p">{</span>
+      <span class="c1">// this is ok since it's a block scoped name</span>
+      <span class="kr">const</span> <span class="nx">x</span> <span class="o">=</span> <span class="s2">"sneaky"</span><span class="p">;</span>
+      <span class="c1">// error, was just defined with `const` above</span>
+      <span class="nx">x</span> <span class="o">=</span> <span class="s2">"foo"</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="c1">// this is ok since it was declared with `let`</span>
+    <span class="nx">x</span> <span class="o">=</span> <span class="s2">"bar"</span><span class="p">;</span>
+    <span class="c1">// error, already declared above in this block</span>
+    <span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="s2">"inner"</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><h3 id="iterators--forof">Iterators + For..Of</h3><p>Iterator objects enable custom iteration like CLR IEnumerable or Java Iterable. Generalize <code class="highlighter-rouge">for..in</code> to custom iterator-based iteration with <code class="highlighter-rouge">for..of</code>. Don’t require realizing an array, enabling lazy design patterns like LINQ.</p><div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">fibonacci</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="p">[</span><span class="nx">Symbol</span><span class="p">.</span><span class="nx">iterator</span><span class="p">]()</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">pre</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">cur</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="nx">next</span><span class="p">()</span> <span class="p">{</span>
+        <span class="p">[</span><span class="nx">pre</span><span class="p">,</span> <span class="nx">cur</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nx">cur</span><span class="p">,</span> <span class="nx">pre</span> <span class="o">+</span> <span class="nx">cur</span><span class="p">];</span>
+        <span class="k">return</span> <span class="p">{</span> <span class="na">done</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="nx">cur</span> <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">n</span> <span class="nx">of</span> <span class="nx">fibonacci</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// truncate the sequence at 1000</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">n</span> <span class="o">&gt;</span> <span class="mi">1000</span><span class="p">)</span>
+    <span class="k">break</span><span class="p">;</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">n</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div><p>Iteration is based on these duck-typed interfaces (using <a href="http://typescriptlang.org">TypeScript</a> type syntax for exposition only):</p><div class="language-ts highlighter-rouge"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">IteratorResult</span> <span class="p">{</span>
+  <span class="nl">done</span><span class="p">:</span> <span class="kr">boolean</span><span class="p">;</span>
+  <span class="nl">value</span><span class="p">:</span> <span class="kr">any</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kr">interface</span> <span class="nx">Iterator</span> <span class="p">{</span>
+  <span class="nx">next</span><span class="p">()</span><span class="err">:</span> <span class="nx">IteratorResult</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kr">interface</span> <span class="nx">Iterable</span> <span class="p">{</span>
+  <span class="p">[</span><span class="nb">Symbol</span><span class="p">.</span><span class="nx">iterator</span><span class="p">]()</span><span class="err">:</span> <span class="nx">Iterator</span>
+<span class="p">}</span>
+</code></pre></div><blockquote class="babel-callout babel-callout-info"><h4>Support via polyfill</h4><p> In order to use Iterators you must include the Babel <a href="/docs/usage/polyfill">polyfill</a>.</p></blockquote><h3 id="generators">Generators</h3><p>Generators simplify iterator-authoring using <code class="highlighter-rouge">function*</code> and <code class="highlighter-rouge">yield</code>. A function declared as function* returns a Generator instance. Generators are subtypes of iterators which include additional <code class="highlighter-rouge">next</code> and <code class="highlighter-rouge">throw</code>. These enable values to flow back into the generator, so <code class="highlighter-rouge">yield</code> is an expression form which returns a value (or throws).</p><p>Note: Can also be used to enable ‘await’-like async programming, see also ES7 <code class="highlighter-rouge">await</code> <a href="https://github.com/lukehoban/ecmascript-asyncawait">proposal</a>.</p><div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">fibonacci</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="p">[</span><span class="nx">Symbol</span><span class="p">.</span><span class="nx">iterator</span><span class="p">]:</span> <span class="kd">function</span><span class="o">*</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">pre</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">cur</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(;;)</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">temp</span> <span class="o">=</span> <span class="nx">pre</span><span class="p">;</span>
+      <span class="nx">pre</span> <span class="o">=</span> <span class="nx">cur</span><span class="p">;</span>
+      <span class="nx">cur</span> <span class="o">+=</span> <span class="nx">temp</span><span class="p">;</span>
+      <span class="k">yield</span> <span class="nx">cur</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">n</span> <span class="nx">of</span> <span class="nx">fibonacci</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// truncate the sequence at 1000</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">n</span> <span class="o">&gt;</span> <span class="mi">1000</span><span class="p">)</span>
+    <span class="k">break</span><span class="p">;</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">n</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div><p>The generator interface is (using <a href="http://typescriptlang.org">TypeScript</a> type syntax for exposition only):</p><div class="language-ts highlighter-rouge"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">Generator</span> <span class="k">extends</span> <span class="nx">Iterator</span> <span class="p">{</span>
+    <span class="nx">next</span><span class="p">(</span><span class="nx">value</span><span class="p">?:</span> <span class="kr">any</span><span class="p">)</span><span class="err">:</span> <span class="nx">IteratorResult</span><span class="p">;</span>
+    <span class="k">throw</span><span class="p">(</span><span class="nx">exception</span><span class="err">:</span> <span class="kr">any</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div><blockquote class="babel-callout babel-callout-info"><h4>Support via polyfill</h4><p> In order to use Generators you must include the Babel <a href="/docs/usage/polyfill">polyfill</a>.</p></blockquote><h3 id="comprehensions">Comprehensions</h3><p>Removed in Babel 6.0</p><h3 id="unicode">Unicode</h3><p>Non-breaking additions to support full Unicode, including new unicode literal form in strings and new RegExp <code class="highlighter-rouge">u</code> mode to handle code points, as well as new APIs to process strings at the 21bit code points level. These additions support building global apps in JavaScript.</p><div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="c1">// same as ES5.1</span>
+<span class="s2">"𠮷"</span><span class="p">.</span><span class="nx">length</span> <span class="o">==</span> <span class="mi">2</span>
+
+<span class="c1">// new RegExp behaviour, opt-in ‘u’</span>
+<span class="s2">"𠮷"</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/./</span><span class="nx">u</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">length</span> <span class="o">==</span> <span class="mi">2</span>
+
+<span class="c1">// new form</span>
+<span class="s2">"\u{20BB7}"</span> <span class="o">==</span> <span class="s2">"𠮷"</span> <span class="o">==</span> <span class="s2">"\uD842\uDFB7"</span>
+
+<span class="c1">// new String ops</span>
+<span class="s2">"𠮷"</span><span class="p">.</span><span class="nx">codePointAt</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">==</span> <span class="mh">0x20BB7</span>
+
+<span class="c1">// for-of iterates code points</span>
+<span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">c</span> <span class="nx">of</span> <span class="s2">"𠮷"</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">c</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div><h3 id="modules">Modules</h3><p>Language-level support for modules for component definition. Codifies patterns from popular JavaScript module loaders (AMD, CommonJS). Runtime behaviour defined by a host-defined default loader. Implicitly async model – no code executes until requested modules are available and processed.</p><div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="c1">// lib/math.js</span>
+<span class="kr">export</span> <span class="kd">function</span> <span class="nx">sum</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kr">export</span> <span class="kd">var</span> <span class="nx">pi</span> <span class="o">=</span> <span class="mf">3.141593</span><span class="p">;</span>
+</code></pre></div><div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="c1">// app.js</span>
+<span class="kr">import</span> <span class="o">*</span> <span class="nx">as</span> <span class="nx">math</span> <span class="nx">from</span> <span class="s2">"lib/math"</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"2π = "</span> <span class="o">+</span> <span class="nx">math</span><span class="p">.</span><span class="nx">sum</span><span class="p">(</span><span class="nx">math</span><span class="p">.</span><span class="nx">pi</span><span class="p">,</span> <span class="nx">math</span><span class="p">.</span><span class="nx">pi</span><span class="p">));</span>
+</code></pre></div><div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="c1">// otherApp.js</span>
+<span class="kr">import</span> <span class="p">{</span><span class="nx">sum</span><span class="p">,</span> <span class="nx">pi</span><span class="p">}</span> <span class="nx">from</span> <span class="s2">"lib/math"</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"2π = "</span> <span class="o">+</span> <span class="nx">sum</span><span class="p">(</span><span class="nx">pi</span><span class="p">,</span> <span class="nx">pi</span><span class="p">));</span>
+</code></pre></div><p>Some additional features include <code class="highlighter-rouge">export default</code> and <code class="highlighter-rouge">export *</code>:</p><div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="c1">// lib/mathplusplus.js</span>
+<span class="kr">export</span> <span class="o">*</span> <span class="nx">from</span> <span class="s2">"lib/math"</span><span class="p">;</span>
+<span class="kr">export</span> <span class="kd">var</span> <span class="nx">e</span> <span class="o">=</span> <span class="mf">2.71828182846</span><span class="p">;</span>
+<span class="kr">export</span> <span class="k">default</span> <span class="kd">function</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">exp</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div><div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="c1">// app.js</span>
+<span class="kr">import</span> <span class="nx">exp</span><span class="p">,</span> <span class="p">{</span><span class="nx">pi</span><span class="p">,</span> <span class="nx">e</span><span class="p">}</span> <span class="nx">from</span> <span class="s2">"lib/mathplusplus"</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"e^π = "</span> <span class="o">+</span> <span class="nx">exp</span><span class="p">(</span><span class="nx">pi</span><span class="p">));</span>
+</code></pre></div><blockquote class="babel-callout babel-callout-info"><h4>Module Formatters</h4><p> Babel can transpile ES2015 Modules to several different formats including Common.js, AMD, System, and UMD. You can even create your own. For more details see the <a href="/docs/plugins/">modules docs</a>.</p></blockquote><h3 id="module-loaders">Module Loaders</h3><blockquote class="babel-callout babel-callout-warning"><h4>Not part of ES2015</h4><p> This is left as implementation-defined within the ECMAScript 2015 specification. The eventual standard will be in WHATWG's <a href="https://whatwg.github.io/loader/">Loader specification</a>, but that is currently a work in progress. What is below is from a previous ES2015 draft.</p></blockquote><p>Module loaders support:</p><ul><li>Dynamic loading</li><li>State isolation</li><li>Global namespace isolation</li><li>Compilation hooks</li><li>Nested virtualization</li></ul><p>The default module loader can be configured, and new loaders can be constructed to evaluated and load code in isolated or constrained contexts.</p><div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="c1">// Dynamic loading – ‘System’ is default loader</span>
+<span class="nx">System</span><span class="p">.</span><span class="kr">import</span><span class="p">(</span><span class="s2">"lib/math"</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">m</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">alert</span><span class="p">(</span><span class="s2">"2π = "</span> <span class="o">+</span> <span class="nx">m</span><span class="p">.</span><span class="nx">sum</span><span class="p">(</span><span class="nx">m</span><span class="p">.</span><span class="nx">pi</span><span class="p">,</span> <span class="nx">m</span><span class="p">.</span><span class="nx">pi</span><span class="p">));</span>
+<span class="p">});</span>
+
+<span class="c1">// Create execution sandboxes – new Loaders</span>
+<span class="kd">var</span> <span class="nx">loader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Loader</span><span class="p">({</span>
+  <span class="na">global</span><span class="p">:</span> <span class="nx">fixup</span><span class="p">(</span><span class="nb">window</span><span class="p">)</span> <span class="c1">// replace ‘console.log’</span>
+<span class="p">});</span>
+<span class="nx">loader</span><span class="p">.</span><span class="nb">eval</span><span class="p">(</span><span class="s2">"console.log(\"hello world!\");"</span><span class="p">);</span>
+
+<span class="c1">// Directly manipulate module cache</span>
+<span class="nx">System</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"jquery"</span><span class="p">);</span>
+<span class="nx">System</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">"jquery"</span><span class="p">,</span> <span class="nx">Module</span><span class="p">({</span><span class="na">$</span><span class="p">:</span> <span class="nx">$</span><span class="p">}));</span> <span class="c1">// WARNING: not yet finalized</span>
+</code></pre></div><blockquote class="babel-callout babel-callout-warning"><h4>Additional polyfill needed</h4><p> Since Babel defaults to using common.js modules, it does not include the polyfill for the module loader API. Get it <a href="https://github.com/ModuleLoader/es6-module-loader">here</a>.</p></blockquote><blockquote class="babel-callout babel-callout-info"><h4>Using Module Loader</h4><p> In order to use this, you'll need to tell Babel to use the <code>system</code> module formatter. Also be sure to check out <a href="https://github.com/systemjs/systemjs">System.js</a></p></blockquote><h3 id="map--set--weakmap--weakset">Map + Set + WeakMap + WeakSet</h3><p>Efficient data structures for common algorithms. WeakMaps provides leak-free object-key’d side tables.</p><div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="c1">// Sets</span>
+<span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Set</span><span class="p">();</span>
+<span class="nx">s</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">"hello"</span><span class="p">).</span><span class="nx">add</span><span class="p">(</span><span class="s2">"goodbye"</span><span class="p">).</span><span class="nx">add</span><span class="p">(</span><span class="s2">"hello"</span><span class="p">);</span>
+<span class="nx">s</span><span class="p">.</span><span class="nx">size</span> <span class="o">===</span> <span class="mi">2</span><span class="p">;</span>
+<span class="nx">s</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="s2">"hello"</span><span class="p">)</span> <span class="o">===</span> <span class="kc">true</span><span class="p">;</span>
+
+<span class="c1">// Maps</span>
+<span class="kd">var</span> <span class="nx">m</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Map</span><span class="p">();</span>
+<span class="nx">m</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">"hello"</span><span class="p">,</span> <span class="mi">42</span><span class="p">);</span>
+<span class="nx">m</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">s</span><span class="p">,</span> <span class="mi">34</span><span class="p">);</span>
+<span class="nx">m</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="o">==</span> <span class="mi">34</span><span class="p">;</span>
+
+<span class="c1">// Weak Maps</span>
+<span class="kd">var</span> <span class="nx">wm</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">WeakMap</span><span class="p">();</span>
+<span class="nx">wm</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">s</span><span class="p">,</span> <span class="p">{</span> <span class="na">extra</span><span class="p">:</span> <span class="mi">42</span> <span class="p">});</span>
+<span class="nx">wm</span><span class="p">.</span><span class="nx">size</span> <span class="o">===</span> <span class="kc">undefined</span>
+
+<span class="c1">// Weak Sets</span>
+<span class="kd">var</span> <span class="nx">ws</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">WeakSet</span><span class="p">();</span>
+<span class="nx">ws</span><span class="p">.</span><span class="nx">add</span><span class="p">({</span> <span class="na">data</span><span class="p">:</span> <span class="mi">42</span> <span class="p">});</span>
+<span class="c1">// Because the added object has no other references, it will not be held in the set</span>
+</code></pre></div><blockquote class="babel-callout babel-callout-info"><h4>Support via polyfill</h4><p> In order to support Maps, Sets, WeakMaps, and WeakSets in all environments you must include the Babel <a href="/docs/usage/polyfill">polyfill</a>.</p></blockquote><h3 id="proxies">Proxies</h3><p>Proxies enable creation of objects with the full range of behaviors available to host objects. Can be used for interception, object virtualization, logging/profiling, etc.</p><div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="c1">// Proxying a normal object</span>
+<span class="kd">var</span> <span class="nx">target</span> <span class="o">=</span> <span class="p">{};</span>
+<span class="kd">var</span> <span class="nx">handler</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">get</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">receiver</span><span class="p">,</span> <span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="err">`</span><span class="nx">Hello</span><span class="p">,</span> <span class="nx">$</span><span class="p">{</span><span class="nx">name</span><span class="p">}</span><span class="o">!</span><span class="err">`</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kd">var</span> <span class="nx">p</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Proxy</span><span class="p">(</span><span class="nx">target</span><span class="p">,</span> <span class="nx">handler</span><span class="p">);</span>
+<span class="nx">p</span><span class="p">.</span><span class="nx">world</span> <span class="o">===</span> <span class="s2">"Hello, world!"</span><span class="p">;</span>
+</code></pre></div><div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="c1">// Proxying a function object</span>
+<span class="kd">var</span> <span class="nx">target</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="s2">"I am the target"</span><span class="p">;</span> <span class="p">};</span>
+<span class="kd">var</span> <span class="nx">handler</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">apply</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">receiver</span><span class="p">,</span> <span class="p">...</span><span class="nx">args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s2">"I am the proxy"</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kd">var</span> <span class="nx">p</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Proxy</span><span class="p">(</span><span class="nx">target</span><span class="p">,</span> <span class="nx">handler</span><span class="p">);</span>
+<span class="nx">p</span><span class="p">()</span> <span class="o">===</span> <span class="s2">"I am the proxy"</span><span class="p">;</span>
+</code></pre></div><p>There are traps available for all of the runtime-level meta-operations:</p><div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">handler</span> <span class="o">=</span>
+<span class="p">{</span>
+  <span class="c1">// target.prop</span>
+  <span class="na">get</span><span class="p">:</span> <span class="p">...,</span>
+  <span class="c1">// target.prop = value</span>
+  <span class="na">set</span><span class="p">:</span> <span class="p">...,</span>
+  <span class="c1">// 'prop' in target</span>
+  <span class="na">has</span><span class="p">:</span> <span class="p">...,</span>
+  <span class="c1">// delete target.prop</span>
+  <span class="na">deleteProperty</span><span class="p">:</span> <span class="p">...,</span>
+  <span class="c1">// target(...args)</span>
+  <span class="na">apply</span><span class="p">:</span> <span class="p">...,</span>
+  <span class="c1">// new target(...args)</span>
+  <span class="na">construct</span><span class="p">:</span> <span class="p">...,</span>
+  <span class="c1">// Object.getOwnPropertyDescriptor(target, 'prop')</span>
+  <span class="na">getOwnPropertyDescriptor</span><span class="p">:</span> <span class="p">...,</span>
+  <span class="c1">// Object.defineProperty(target, 'prop', descriptor)</span>
+  <span class="na">defineProperty</span><span class="p">:</span> <span class="p">...,</span>
+  <span class="c1">// Object.getPrototypeOf(target), Reflect.getPrototypeOf(target),</span>
+  <span class="c1">// target.__proto__, object.isPrototypeOf(target), object instanceof target</span>
+  <span class="na">getPrototypeOf</span><span class="p">:</span> <span class="p">...,</span>
+  <span class="c1">// Object.setPrototypeOf(target), Reflect.setPrototypeOf(target)</span>
+  <span class="na">setPrototypeOf</span><span class="p">:</span> <span class="p">...,</span>
+  <span class="c1">// for (let i in target) {}</span>
+  <span class="na">enumerate</span><span class="p">:</span> <span class="p">...,</span>
+  <span class="c1">// Object.keys(target)</span>
+  <span class="na">ownKeys</span><span class="p">:</span> <span class="p">...,</span>
+  <span class="c1">// Object.preventExtensions(target)</span>
+  <span class="na">preventExtensions</span><span class="p">:</span> <span class="p">...,</span>
+  <span class="c1">// Object.isExtensible(target)</span>
+  <span class="na">isExtensible</span> <span class="p">:...</span>
+<span class="p">}</span>
+</code></pre></div><blockquote class="babel-callout babel-callout-danger"><h4>Unsupported feature</h4><p> Due to the limitations of ES5, Proxies cannot be transpiled or polyfilled. See support in <a href="https://kangax.github.io/compat-table/es6/#test-Proxy">various JavaScript engines</a>.</p></blockquote><h3 id="symbols">Symbols</h3><p>Symbols enable access control for object state. Symbols allow properties to be keyed by either <code class="highlighter-rouge">string</code> (as in ES5) or <code class="highlighter-rouge">symbol</code>. Symbols are a new primitive type. Optional <code class="highlighter-rouge">name</code> parameter used in debugging - but is not part of identity. Symbols are unique (like gensym), but not private since they are exposed via reflection features like <code class="highlighter-rouge">Object.getOwnPropertySymbols</code>.</p><div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+
+  <span class="c1">// module scoped symbol</span>
+  <span class="kd">var</span> <span class="nx">key</span> <span class="o">=</span> <span class="nx">Symbol</span><span class="p">(</span><span class="s2">"key"</span><span class="p">);</span>
+
+  <span class="kd">function</span> <span class="nx">MyClass</span><span class="p">(</span><span class="nx">privateData</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="o">=</span> <span class="nx">privateData</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="nx">MyClass</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">doStuff</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="p">...</span> <span class="k">this</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="p">...</span>
+    <span class="p">}</span>
+  <span class="p">};</span>
+
+  <span class="c1">// Limited support from Babel, full support requires native implementation.</span>
+  <span class="k">typeof</span> <span class="nx">key</span> <span class="o">===</span> <span class="s2">"symbol"</span>
+<span class="p">})();</span>
+
+<span class="kd">var</span> <span class="nx">c</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyClass</span><span class="p">(</span><span class="s2">"hello"</span><span class="p">)</span>
+<span class="nx">c</span><span class="p">[</span><span class="s2">"key"</span><span class="p">]</span> <span class="o">===</span> <span class="kc">undefined</span>
+</code></pre></div><blockquote class="babel-callout babel-callout-info"><h4>Limited support via polyfill</h4><p> Limited support requires the Babel <a href="/docs/usage/polyfill">polyfill</a>. Due to language limitations, some features can't be transpiled or polyfilled. See core.js's <a href="https://github.com/zloirock/core-js#caveats-when-using-symbol-polyfill">caveats section</a> for more details.</p></blockquote><h3 id="subclassable-built-ins">Subclassable Built-ins</h3><p>In ES2015, built-ins like <code class="highlighter-rouge">Array</code>, <code class="highlighter-rouge">Date</code> and DOM <code class="highlighter-rouge">Element</code>s can be subclassed.</p><div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="c1">// User code of Array subclass</span>
+<span class="kr">class</span> <span class="nx">MyArray</span> <span class="kr">extends</span> <span class="nb">Array</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(...</span><span class="nx">args</span><span class="p">)</span> <span class="p">{</span> <span class="kr">super</span><span class="p">(...</span><span class="nx">args</span><span class="p">);</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyArray</span><span class="p">();</span>
+<span class="nx">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
+<span class="nx">arr</span><span class="p">.</span><span class="nx">length</span> <span class="o">==</span> <span class="mi">2</span>
+</code></pre></div><blockquote class="babel-callout babel-callout-warning"><h4>Partial support</h4><p> Built-in subclassability should be evaluated on a case-by-case basis as classes such as <code>HTMLElement</code> <strong>can</strong> be subclassed while many such as <code>Date</code>, <code>Array</code> and <code>Error</code> <strong>cannot</strong> be due to ES5 engine limitations.</p></blockquote><h3 id="math--number--string--object-apis">Math + Number + String + Object APIs</h3><p>Many new library additions, including core Math libraries, Array conversion helpers, and Object.assign for copying.</p><div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nb">Number</span><span class="p">.</span><span class="nx">EPSILON</span>
+<span class="nb">Number</span><span class="p">.</span><span class="nx">isInteger</span><span class="p">(</span><span class="kc">Infinity</span><span class="p">)</span> <span class="c1">// false</span>
+<span class="nb">Number</span><span class="p">.</span><span class="nb">isNaN</span><span class="p">(</span><span class="s2">"NaN"</span><span class="p">)</span> <span class="c1">// false</span>
+
+<span class="nb">Math</span><span class="p">.</span><span class="nx">acosh</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="c1">// 1.762747174039086</span>
+<span class="nb">Math</span><span class="p">.</span><span class="nx">hypot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span> <span class="c1">// 5</span>
+<span class="nb">Math</span><span class="p">.</span><span class="nx">imul</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span> <span class="c1">// 2</span>
+
+<span class="s2">"abcde"</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s2">"cd"</span><span class="p">)</span> <span class="c1">// true</span>
+<span class="s2">"abc"</span><span class="p">.</span><span class="nx">repeat</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="c1">// "abcabcabc"</span>
+
+<span class="nb">Array</span><span class="p">.</span><span class="nx">from</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s2">"*"</span><span class="p">))</span> <span class="c1">// Returns a real Array</span>
+<span class="nb">Array</span><span class="p">.</span><span class="nx">of</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="c1">// Similar to new Array(...), but without special one-arg behavior</span>
+<span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">].</span><span class="nx">fill</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1">// [0,7,7]</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">].</span><span class="nx">findIndex</span><span class="p">(</span><span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">x</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span> <span class="c1">// 1</span>
+<span class="p">[</span><span class="s2">"a"</span><span class="p">,</span> <span class="s2">"b"</span><span class="p">,</span> <span class="s2">"c"</span><span class="p">].</span><span class="nx">entries</span><span class="p">()</span> <span class="c1">// iterator [0, "a"], [1,"b"], [2,"c"]</span>
+<span class="p">[</span><span class="s2">"a"</span><span class="p">,</span> <span class="s2">"b"</span><span class="p">,</span> <span class="s2">"c"</span><span class="p">].</span><span class="nx">keys</span><span class="p">()</span> <span class="c1">// iterator 0, 1, 2</span>
+<span class="p">[</span><span class="s2">"a"</span><span class="p">,</span> <span class="s2">"b"</span><span class="p">,</span> <span class="s2">"c"</span><span class="p">].</span><span class="nx">values</span><span class="p">()</span> <span class="c1">// iterator "a", "b", "c"</span>
+
+<span class="nb">Object</span><span class="p">.</span><span class="nx">assign</span><span class="p">(</span><span class="nx">Point</span><span class="p">,</span> <span class="p">{</span> <span class="na">origin</span><span class="p">:</span> <span class="k">new</span> <span class="nx">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="p">})</span>
+</code></pre></div><blockquote class="babel-callout babel-callout-warning"><h4>Limited support from polyfill</h4><p> Most of these APIs are supported by the Babel <a href="/docs/usage/polyfill">polyfill</a>. However, certain features are omitted for various reasons (e.g. <code>String.prototype.normalize</code> needs a lot of additional code to support). You can find more polyfills <a href="https://github.com/addyosmani/es6-tools#polyfills">here</a>.</p></blockquote><h3 id="binary-and-octal-literals">Binary and Octal Literals</h3><p>Two new numeric literal forms are added for binary (<code class="highlighter-rouge">b</code>) and octal (<code class="highlighter-rouge">o</code>).</p><div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="mi">0</span><span class="nx">b111110111</span> <span class="o">===</span> <span class="mi">503</span> <span class="c1">// true</span>
+<span class="mi">0</span><span class="nx">o767</span> <span class="o">===</span> <span class="mi">503</span> <span class="c1">// true</span>
+</code></pre></div><blockquote class="babel-callout babel-callout-warning"><h4>Only supports literal form</h4><p> Babel is only able to transform <code>0o767</code> and not <code>Number("0o767")</code>.</p></blockquote><h3 id="promises">Promises</h3><p>Promises are a library for asynchronous programming. Promises are a first class representation of a value that may be made available in the future. Promises are used in many existing JavaScript libraries.</p><div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">timeout</span><span class="p">(</span><span class="nx">duration</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nx">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">duration</span><span class="p">);</span>
+    <span class="p">})</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">p</span> <span class="o">=</span> <span class="nx">timeout</span><span class="p">(</span><span class="mi">1000</span><span class="p">).</span><span class="nx">then</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">timeout</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span>
+<span class="p">}).</span><span class="nx">then</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s2">"hmm"</span><span class="p">);</span>
+<span class="p">}).</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">([</span><span class="nx">timeout</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span> <span class="nx">timeout</span><span class="p">(</span><span class="mi">200</span><span class="p">)]);</span>
+<span class="p">})</span>
+</code></pre></div><blockquote class="babel-callout babel-callout-info"><h4>Support via polyfill</h4><p> In order to support Promises you must include the Babel <a href="/docs/usage/polyfill">polyfill</a>.</p></blockquote><h3 id="reflect-api">Reflect API</h3><p>Full reflection API exposing the runtime-level meta-operations on objects. This is effectively the inverse of the Proxy API, and allows making calls corresponding to the same meta-operations as the proxy traps. Especially useful for implementing proxies.</p><div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">O</span> <span class="o">=</span> <span class="p">{</span><span class="na">a</span><span class="p">:</span> <span class="mi">1</span><span class="p">};</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">O</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="p">{</span><span class="na">value</span><span class="p">:</span> <span class="mi">2</span><span class="p">});</span>
+<span class="nx">O</span><span class="p">[</span><span class="nx">Symbol</span><span class="p">(</span><span class="s1">'c'</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+
+<span class="nx">Reflect</span><span class="p">.</span><span class="nx">ownKeys</span><span class="p">(</span><span class="nx">O</span><span class="p">);</span> <span class="c1">// ['a', 'b', Symbol(c)]</span>
+
+<span class="kd">function</span> <span class="nx">C</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">){</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">c</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kd">var</span> <span class="nx">instance</span> <span class="o">=</span> <span class="nx">Reflect</span><span class="p">.</span><span class="nx">construct</span><span class="p">(</span><span class="nx">C</span><span class="p">,</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">22</span><span class="p">]);</span>
+<span class="nx">instance</span><span class="p">.</span><span class="nx">c</span><span class="p">;</span> <span class="c1">// 42</span>
+</code></pre></div><blockquote class="babel-callout babel-callout-info"><h4>Support via polyfill</h4><p> In order to use the Reflect API you must include the Babel <a href="/docs/usage/polyfill">polyfill</a>.</p></blockquote><h3 id="tail-calls">Tail Calls</h3><p>Calls in tail-position are guaranteed to not grow the stack unboundedly. Makes recursive algorithms safe in the face of unbounded inputs.</p><div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">factorial</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span> <span class="nx">acc</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="s2">"use strict"</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="nx">acc</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nx">factorial</span><span class="p">(</span><span class="nx">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">n</span> <span class="o">*</span> <span class="nx">acc</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// Stack overflow in most implementations today,</span>
+<span class="c1">// but safe on arbitrary inputs in ES2015</span>
+<span class="nx">factorial</span><span class="p">(</span><span class="mi">100000</span><span class="p">)</span>
+</code></pre></div><blockquote class="babel-callout babel-callout-warning"><h4>Temporarily Removed in Babel 6</h4><p> Only explicit self referencing tail recursion was supported due to the complexity and performance impact of supporting tail calls globally. Removed due to other bugs and will be re-implemented.</p></blockquote></div><div class="col-md-3"><div class="sidebar"><ul class="nav"></ul></div></div></div><h2 id="community-discussion" class="page-header">Community Discussion</h2><div id="discourse-comments"></div><script type="text/javascript"> DiscourseEmbed = { discourseUrl: 'https://discuss.babeljs.io/', discourseEmbedUrl: 'https://babeljs.io/learn-es2015/'}; (function() { var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true; d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js'; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d); })(); </script></div><div class="footer text-center"><p><a href="https://github.com/babel/babel">Babel</a> · <a href="https://github.com/babel/babel/blob/master/LICENSE">Distributed under MIT License</a> · <a href="https://github.com/babel/babel/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></p><p><a href="http://henryzoo.com/babel.github.io/">Looking for Babel 5.x docs?</a> · Found an issue with the docs? Report it <a href="https://github.com/babel/babel.github.io/issues/new">here</a>.</p></div><script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js' defer></script> <script src='//cdnjs.cloudflare.com/ajax/libs/lodash.js/4.16.3/lodash.min.js' defer></script> <script src='//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js' defer></script> <script src='https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.13/clipboard.min.js' defer></script> <script src='https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js' defer></script> <script src='/scripts/search.js' defer></script> <script src='/scripts/clipboard.js' defer></script> <script src='/scripts/open-in-repl.js' defer></script> <script> document.addEventListener('DOMContentLoaded', function() { $("html").removeClass("no-js").addClass("js"); }); </script> <script src="/scripts/docs.js?tloda=2017-10-31T07:11:31+00:00" defer></script></body></html>
