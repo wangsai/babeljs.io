@@ -1,1 +1,1 @@
-Sitemap: https://babeljs.io/sitemap.xml
+Sitemap: https://babel.docschina.org//sitemap.xml
