@@ -1,17 +1,17 @@
 # babel-plugin-check-es2015-constants
 
-Validate ES2015 constants (prevents reassignment of const variables).
+验证 ES2015 常量 (防止重新定义 const 变量).
 
-## Example
+## 例子
 
-**In**
+**输出**
 
 ```js
 const a = 1;
 a = 2;
 ```
 
-**Out**
+**输出**
 
 ```bash
 repl: "a" is read-only
@@ -21,15 +21,15 @@ repl: "a" is read-only
 ```
 
 
-## Installation
+## 安装
 
 ```sh
 npm install --save-dev babel-plugin-check-es2015-constants
 ```
 
-## Usage
+## 使用
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc` (推荐)
 
 **.babelrc**
 
@@ -39,13 +39,13 @@ npm install --save-dev babel-plugin-check-es2015-constants
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins check-es2015-constants script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {
@@ -53,6 +53,6 @@ require("babel-core").transform("code", {
 });
 ```
 
-## Note
+## 注意
 
-This check will only validate consts. If you need it to compile down to `var` then you must also install and enable [`transform-es2015-block-scoping`](http://babeljs.io/docs/plugins/transform-es2015-block-scoping/).
+这个检查只会验证const常量。如果你需要把它编译为 `var` ，你需要安装和使用 [`transform-es2015-block-scoping`](http://babeljs.io/docs/plugins/transform-es2015-block-scoping/).
