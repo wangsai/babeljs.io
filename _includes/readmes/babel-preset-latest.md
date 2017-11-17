@@ -1,16 +1,16 @@
 # babel-preset-latest
 
-> Babel preset including es2015, es2016, es2017.
+> Babel preset 包括 es2015, es2016, es2017.
 
-## Install
+## 安装
 
 ```sh
 npm install --save-dev babel-preset-latest
 ```
 
-## Usage
+## 使用
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc` (推荐)
 
 **.babelrc**
 
@@ -20,13 +20,13 @@ npm install --save-dev babel-preset-latest
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel script.js --presets latest
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {
@@ -34,13 +34,13 @@ require("babel-core").transform("code", {
 });
 ```
 
-### Options
+### 选项
 
 ### `es2015`
 
-`boolean`, defaults to `true`.
+`boolean`, 默认为 `true`.
 
-Toggles including plugins from the [es2015 preset](https://babeljs.io/docs/plugins/preset-es2015/).
+可以切换来自包括 [es2015 preset](https://babeljs.io/docs/plugins/preset-es2015/) 的插件.
 
 ```json
 {
@@ -52,7 +52,7 @@ Toggles including plugins from the [es2015 preset](https://babeljs.io/docs/plugi
 }
 ```
 
-You can also pass options down to the `es2015` preset.
+你也可以传递 `es2015` preset 的选项.
 
 ```json
 {
@@ -66,16 +66,16 @@ You can also pass options down to the `es2015` preset.
 }
 ```
 
-**Note:** This also works for the other preset-year options below.
+**注意:** 这也适用于下面其他 preset-year 的选项.
 
 ### `es2016`
 
-`boolean`, defaults to `true`.
+`boolean`, 默认为 `true`.
 
-Toggles including plugins from the [es2016 preset](https://babeljs.io/docs/plugins/preset-es2016/).
+可以切换来自包括 [es2016 preset](https://babeljs.io/docs/plugins/preset-es2016/) 的插件.
 
 ### `es2017`
 
-`boolean`, defaults to `true`.
+`boolean`, 默认为 `true`.
 
-Toggles including plugins from the [es2017 preset](https://babeljs.io/docs/plugins/preset-es2017/).
+可以切换来自包括 [es2017 preset](https://babeljs.io/docs/plugins/preset-es2017/) 的插件.
