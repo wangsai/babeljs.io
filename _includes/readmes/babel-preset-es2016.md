@@ -1,16 +1,16 @@
 # babel-preset-es2016
 
-> Babel preset for all es2016 plugins.
+> Babel预设了所有的ES2016插件.
 
-## Install
+## 安装
 
 ```sh
 npm install --save-dev babel-preset-es2016
 ```
 
-## Usage
+## 使用
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc` (推荐)
 
 **.babelrc**
 
@@ -20,13 +20,13 @@ npm install --save-dev babel-preset-es2016
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel script.js --presets es2016
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {
