@@ -1,16 +1,16 @@
 # babel-preset-es2017
 
-> Babel preset for all es2017 plugins.
+> Babel预设了所有的ES2017插件.
 
-## Install
+## 安装
 
 ```sh
 npm install --save-dev babel-preset-es2017
 ```
 
-## Usage
+## 使用
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc` (Recommended)
 
 **.babelrc**
 
@@ -20,13 +20,13 @@ npm install --save-dev babel-preset-es2017
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel script.js --presets es2017
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {

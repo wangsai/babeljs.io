@@ -1,16 +1,16 @@
 # babel-preset-es2015
 
-> Babel preset for all es2015 plugins.
+> Babel预设了所有的ES2015插件.
 
-## Install
+## 安装
 
 ```sh
 npm install --save-dev babel-preset-es2015
 ```
 
-## Usage
+## 使用
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc` (推荐)
 
 **.babelrc**
 
@@ -20,13 +20,13 @@ npm install --save-dev babel-preset-es2015
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel script.js --presets es2015
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {
@@ -34,24 +34,24 @@ require("babel-core").transform("code", {
 });
 ```
 
-## Options
+## 选项
 
 ### `loose`
 
-`boolean`, defaults to `false`.
+`boolean`, 默认 `false`.
 
-Enable "loose" transformations for any plugins in this preset that allow them.
+为该预设中允许它们的任何插件启用“loose”转换.
 
 ### `modules`
 
-`"amd" | "umd" | "systemjs" | "commonjs" | false`, defaults to `"commonjs"`.
+`"amd" | "umd" | "systemjs" | "commonjs" | false`, 默认 `"commonjs"`.
 
-Enable transformation of ES6 module syntax to another module type.
+启用将es6模块语法转换为另一个模块类型.
 
-Setting this to `false` will not transform modules.
+将其设置为`false`将不会转换任何模块.
 
 ### `spec`
 
-`boolean`, defaults to `false`.
+`boolean`, 默认`false`.
 
-Enable "spec" transformations for any plugins in this preset that allow them.
+为该预设中允许它们的任何插件启用“spec”转换.
