@@ -1,28 +1,26 @@
 # babel-preset-stage-2
 
-> Babel preset for stage 2 plugins.
+> 包含 stage 2 特性的一组插件的 Babel preset。
 
-The gist of Stage 2 is:
+Stage 2 的要点是：
 
-> **Stage 2:** draft
-> 
-> **What is it?** A first version of what will be in the specification. At this point, an eventual inclusion of the feature in the standard is likely.
-> 
-> **What’s required?** The proposal must now additionally have a formal description of the syntax and semantics of the feature (using the formal language of the ECMAScript specification). The description should be as complete as possible, but can contain todos and placeholders. Two experimental implementations of the feature are needed, but one of them can be in a transpiler such as Babel.
+> **Stage 2:** 草案
 >
-> **What’s next?** Only incremental changes are expected from now on.
+> **它是什么？** 将会进入规范的提案的第一个版本。从这一点来说，可能最终将该功能包含在标准中。
+>
+> **要求是？** 该提案必须包含对该功能的语法和语义的正式说明（使用 ECMAScript 规范的官方形式语言）。该说明应尽可能完整，但也可以包含待办事项和占位符。包含该特性的两个实验性实现是必须的，其中一个可以如 Babel 等转译器实现。
+>
+> **下一阶段是？** 从现在起，只可进行增量更改。
 
-
-
-## Install
+## 安装
 
 ```sh
 npm install --save-dev babel-preset-stage-2
 ```
 
-## Usage
+## 使用
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc` 文件(推荐)
 
 **.babelrc**
 
@@ -32,13 +30,13 @@ npm install --save-dev babel-preset-stage-2
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel script.js --presets stage-2
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {
@@ -47,4 +45,4 @@ require("babel-core").transform("code", {
 ```
 ## References
 
-- Chapter "[The TC39 process for ECMAScript features](http://exploringjs.com/es2016-es2017/ch_tc39-process.html)" in "Exploring ES2016 and ES2017" by Axel Rauschmayer
+- Axel Rauschmayer 的文章 “Exploring ES2016 and ES2017” 中 "[The TC39 process for ECMAScript features](http://exploringjs.com/es2016-es2017/ch_tc39-process.html)" 相关章节。
