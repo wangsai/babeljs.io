@@ -1,28 +1,27 @@
 # babel-preset-stage-3
 
-> Babel preset for stage 3 plugins.
+> 包含 stage 3 特性的一组插件的 Babel preset。
 
-The gist of Stage 3 is:
+Stage 3 的要点是：
 
-> **Stage 3**: candidate
+> **Stage 3**: 候选提案
 >
-> **What is it?** The proposal is mostly finished and now needs feedback from implementations and users to progress further.
-
-> **What’s required?** The spec text must be complete. Designated reviewers (appointed by TC39, not by the champion) and the ECMAScript spec editor must sign off on the spec text. There must be at least two spec-compliant implementations (which don’t have to be enabled by default).
+> **它是什么?** 该提案大部分已经完成，接下来需要收集实现和使用者的反馈，从而取得新的进展。
 >
-> **What’s next?** Henceforth, changes should only be made in response to critical issues raised by the implementations and their use.
+> **要求是？** 规范文本必须完整。指定的审阅者（由 TC39 指定，而非负责人）和 ECMAScript 规范的编者必须在规范上签名。必须至少有两个符合规范的实现（无需默认启用）。
+>
+> **下一阶段是？** 此后，只有在实现和使用过程中出现了重大问题才能修改。
 
 
-
-## Install
+## 安装
 
 ```sh
 npm install --save-dev babel-preset-stage-3
 ```
 
-## Usage
+## 使用
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc` 文件(推荐)
 
 **.babelrc**
 
@@ -32,13 +31,13 @@ npm install --save-dev babel-preset-stage-3
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel script.js --presets stage-3
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {
@@ -46,6 +45,6 @@ require("babel-core").transform("code", {
 });
 ```
 
-## References
+## 参考
 
-- Chapter "[The TC39 process for ECMAScript features](http://exploringjs.com/es2016-es2017/ch_tc39-process.html)" in "Exploring ES2016 and ES2017" by Axel Rauschmayer
+- Axel Rauschmayer 的文章 “Exploring ES2016 and ES2017” 中 "[The TC39 process for ECMAScript features](http://exploringjs.com/es2016-es2017/ch_tc39-process.html)" 相关章节。
