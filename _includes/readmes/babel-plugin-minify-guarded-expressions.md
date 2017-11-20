@@ -1,30 +1,30 @@
 # babel-plugin-minify-guarded-expressions
 
-## Example
+## 示例
 
-**In**
+**输入**
 
 ```javascript
 !x && foo();
 alert(0 && new Foo());
 ```
 
-**Out**
+**输出**
 
 ```javascript
 x || foo();
 alert(0);
 ```
 
-## Installation
+## 安装
 
 ```sh
 npm install babel-plugin-minify-guarded-expressions
 ```
 
-## Usage
+## 使用
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc` (Recommended)
 
 **.babelrc**
 
@@ -34,13 +34,13 @@ npm install babel-plugin-minify-guarded-expressions
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins minify-guarded-expressions script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {

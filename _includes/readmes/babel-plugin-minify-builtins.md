@@ -1,16 +1,16 @@
 # babel-plugin-minify-builtins
 
-Minify Standard built-in Objects
+迷你的标准内建对象
 
-## Example
+## 示例
 
-**In**
+**输入**
 
 ```javascript
 Math.floor(a) + Math.floor(b)
 ```
 
-**Out**
+**输出**
 
 ```javascript
 var _Mathfloor = Math.floor;
@@ -18,15 +18,15 @@ var _Mathfloor = Math.floor;
 _Mathfloor(a) + _Mathfloor(b);
 ```
 
-## Installation
+## 安装
 
 ```sh
 npm install babel-plugin-minify-builtins
 ```
 
-## Usage
+## 使用
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc` (官方推荐)
 
 **.babelrc**
 
@@ -36,13 +36,13 @@ npm install babel-plugin-minify-builtins
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins minify-builtins script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {
@@ -50,6 +50,6 @@ require("babel-core").transform("code", {
 });
 ```
 
-## Options
+## 可选项
 
-+ `tdz` - Account for TDZ (Temporal Dead Zone)
++ `tdz` - TDZ的配置 (Temporal Dead Zone)(暂时性死区)

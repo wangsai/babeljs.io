@@ -1,10 +1,10 @@
 # babel-plugin-minify-dead-code-elimination
 
-Inlines bindings when possible. Tries to evaluate expressions and prunes unreachable as a result.
+尽可能的内联绑定。尝试评估表达式，并执行不可访问的操作。
 
-## Example
+## 示例
 
-**In**
+**输入**
 
 ```javascript
 function foo() {var x = 1;}
@@ -18,7 +18,7 @@ function baz() {
 }
 ```
 
-**Out**
+**输出**
 
 ```javascript
 function foo() {}
@@ -28,15 +28,15 @@ function baz() {
 }
 ```
 
-## Installation
+## 安装
 
 ```sh
 npm install babel-plugin-minify-dead-code-elimination
 ```
 
-## Usage
+## 使用
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc` (Recommended)
 
 **.babelrc**
 
@@ -52,13 +52,13 @@ npm install babel-plugin-minify-dead-code-elimination
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins minify-dead-code-elimination script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {
@@ -66,9 +66,9 @@ require("babel-core").transform("code", {
 });
 ```
 
-## Options
+## 可选项
 
-+ `keepFnName` - prevent plugin from removing function name. Useful for code depending on `fn.name`
-+ `keepFnArgs` - prevent plugin from removing function args. Useful for code depending on `fn.length`
-+ `keepClassName` - prevent plugin from removing class name. Useful for code depending on `cls.name`
-+ `tdz` - Account for TDZ (Temporal Dead Zone)
++ `keepFnName` - 防止插件删除函数名。适用于代码，具体取决于`fn.name`
++ `keepFnArgs` - 防止插件删除函数参数。适用于代码，具体取决于`fn.length`
++ `keepClassName` - 防止插件删除类名。 适用于代码，具体取决于`cls.name`
++ `tdz` - TDZ的配置 (Temporal Dead Zone)(暂时性死区)
