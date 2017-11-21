@@ -1,10 +1,10 @@
 # babel-plugin-minify-constant-folding
 
-Tries to evaluate expressions and inline the result.
+尝试评估表达式并内联结果。
 
-## Example
+## 示例
 
-**In**
+**输入**
 
 ```javascript
 "a" + "b"
@@ -28,7 +28,7 @@ Tries to evaluate expressions and inline the result.
 "abc".length;
 ```
 
-**Out**
+**输出**
 
 ```javascript
 "ab";
@@ -53,15 +53,15 @@ c;
 3;
 ```
 
-## Installation
+## 安装
 
 ```sh
 npm install babel-plugin-minify-constant-folding
 ```
 
-## Usage
+## 使用
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc` (Recommended)
 
 **.babelrc**
 
@@ -71,13 +71,13 @@ npm install babel-plugin-minify-constant-folding
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins minify-constant-folding script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {
@@ -85,6 +85,6 @@ require("babel-core").transform("code", {
 });
 ```
 
-## Options
+## 可选项
 
-+ `tdz` - Account for TDZ (Temporal Dead Zone)
++ `tdz` - TDZ的配置 (Temporal Dead Zone)(暂时性死区)

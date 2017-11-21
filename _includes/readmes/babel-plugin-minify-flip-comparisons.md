@@ -1,10 +1,10 @@
 # babel-plugin-minify-flip-comparisons
 
-**Note:** while this plugin doesn’t shorten the output in any way, it does optimize it for repetition-based compression algorithms such as gzip.
+**备注:** 虽然这个插件没有以任何方式缩短输出，但它对基于重复的压缩算法(如gzip)进行优化。
 
-## Example
+## 示例
 
-**In**
+**输入**
 
 ```javascript
 const foo = a === 1;
@@ -13,7 +13,7 @@ if (bar !== null) {
 }
 ```
 
-**Out**
+**输出**
 
 ```javascript
 const foo = 1 === a;
@@ -28,9 +28,9 @@ if (null !== bar) {
 npm install babel-plugin-minify-flip-comparisons
 ```
 
-## Usage
+## 使用
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc` (Recommended)
 
 **.babelrc**
 
@@ -40,13 +40,13 @@ npm install babel-plugin-minify-flip-comparisons
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins minify-flip-comparisons script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {
