@@ -30,7 +30,7 @@ Babel 是一个编译器。 从宏观角度看，它将运行代码分为3个阶
 - [es2015](/docs/plugins/preset-es2015/)
 - [es2016](/docs/plugins/preset-es2016/)
 - [es2017](/docs/plugins/preset-es2017/)
-- [latest (不推荐使用 env)](/docs/plugins/preset-latest/)
+- [latest (不推荐, 请使用 env)](/docs/plugins/preset-latest/)
 - [react](/docs/plugins/preset-react/)
 - [flow](/docs/plugins/preset-flow/)
 
