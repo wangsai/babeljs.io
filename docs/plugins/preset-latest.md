@@ -1,13 +1,13 @@
 ---
 layout: docs
-title: Latest preset
-description: All you need to compile what's in ES2015+
+title: 最新 preset
+description: 编译所有 ES2015+ 的内容
 permalink: /docs/plugins/preset-latest/
 package: babel-preset-latest
 ---
 
 <blockquote class="babel-callout babel-callout-warning">
-  <h4>preset-latest is deprecated</h4>
+  <h4>preset-latest 已弃用</h4>
   <p>
     <code>
       { "presets": ["latest"] } === { "presets": ["env"] }
@@ -15,11 +15,11 @@ package: babel-preset-latest
   </p>
 </blockquote>
 
-> Use [preset-env](/docs/plugins/preset-env/) instead.
+> 请使用 [preset-env](/docs/plugins/preset-env/) 代替。
 
-This is a special preset that will contain all yearly presets so user's won't need to specify each one individually.
+这是一个包含所有年度 preset 的特殊 preset ，因此用户不需要单独指定每个 preset 。
 
-It currently includes:
+目前包括:
 
 - [es2017](/docs/plugins/preset-es2017/)
 - [es2016](/docs/plugins/preset-es2016/)
