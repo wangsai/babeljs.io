@@ -5,7 +5,7 @@ permalink: /env/
 ---
 
 > 我们非常 😸 高兴你正在使用 ES2015 语法，但不是继续每年度的 preset, 团队推荐使用 babel-preset-env. 默认情况下，他和之前的 preset 将 ES2015+ 编译到 ES5 具有相同的行为。
-> 查看 [v1.x readme 以获得更多信息](https://github.com/babel/babel-preset-env/tree/1.x)。 (对于 Babel 7, 我们将 preset 移动到了 [main babel repo](https://github.com/babel/babel/tree/master/experimental/babel-preset-env)).
+> 查看 [v1.x readme 以获得更多信息](https://github.com/babel/babel-preset-env/tree/1.x)。 (对于 Babel 7, 我们将 preset 移动到了 [main babel repo](https://github.com/babel/babel/tree/master/packages/babel-preset-env)) 。
 
 ## 升级到 `babel-preset-env`
 
