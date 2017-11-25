@@ -1,23 +1,23 @@
 ---
 layout: docs
 title: 学习 ES2015
-description: ECMAScript 2015 功能的详细概述. 基于 Luke Hoban's es6features 项目.
+description: ECMAScript 2015 功能的详细概述。来自于 Luke Hoban 的 es6features 仓库。
 permalink: /learn-es2015/
 ---
 
 <blockquote class="babel-callout babel-callout-info">
   <h3>es6功能</h3>
   <p>
-    这个文档最初来自于 Luke Hoban 的杰作
-    <a href="https://git.io/es6features">es6features</a> repo. 去github上面给star吧!
+    这份文档最初来自于 Luke Hoban 的优秀仓库
+    <a href="https://git.io/es6features">es6features</a>。 在Github上给个star吧!
+    
   </p>
 </blockquote>
 
 <blockquote class="babel-callout babel-callout-info">
-  <h4>REPL</h4>
+  <h4>交互式编程环境</h4>
   <p>
-    请务必在网上尝试这些功能
-    <a href="/repl">REPL</a>.
+    请务必在网上亲自<a href="/repl">试验</a>这些功能。
   </p>
 </blockquote>
 
@@ -25,22 +25,26 @@ permalink: /learn-es2015/
 
 > ECMAScript 2015 是2015年6月被批准的ECMAScript标准。   
 
-ES2015 是该语言的显著更新，也是自2009年ES5标准确定后的第一个重大更新，将会得到主要的JavaScript引擎的[实现](https://kangax.github.io/es5-compat-table/es6/)    
+ES2015 是语言的一次重大更新，也是自2009年ES5标准确定后的第一个重大更新，目前主流的JavaScript引擎中的实现进展[在这里](https://kangax.github.io/es5-compat-table/es6/)。    
 
 查看 [ES2015版本的完整规范](http://www.ecma-international.org/ecma-262/6.0/index.html)
 
+
 ## ECMAScript 2015 功能
 
-### 箭头函数
+<!-- To not break some existing links to here, just in case. -->
+<a id="arrows"></a>
 
-箭头函数用 `=>` 来代表一个函数，语法上类似于C#, Java8和CoffeeScript中的相关特性。他支持两种写法: 表达式（Expression bodies）和函数体（Statement bodies）。值得注意的是，与一般的函数不同，函数体内的`this`对象，绑定定义时所在的对象，而不是使用时所在的对象。   
+### 箭头函数与this语法(Arrows and Lexical This)
+
+箭头函数用 `=>` 来代表一个函数，语法上类似于C#, Java8和CoffeeScript中的相关特性。他同时支持表达式（Expression bodies）和语句（Statement bodies）的写法。值得注意的是，与一般的函数不同，箭头函数与包裹它的代码共享相同的`this`对象，如果箭头函数在其他函数的内部，它也将共享该函数的`arguments`变量。
 
 ```js
-// 表达式 Expression bodies
+// 表达式写法 Expression bodies
 var odds = evens.map(v => v + 1);
 var nums = evens.map((v, i) => v + i);
 
-// 函数体 Statement bodies
+// 语句写法 Statement bodies
 nums.forEach(v => {
   if (v % 5 === 0)
     fives.push(v);
@@ -74,7 +78,7 @@ square(2, 4, 7.5, 8, 11.5, 21); // returns: [4, 16, 56.25, 64, 132.25, 441]
 
 ```
 
-### 类
+### 类(Classes)
 ES2015的类只是一个语法糖，通过class关键字让语法更接近传统的面向对象模式，本质上还是基于原型的。使用单一便捷的声明格式，使得类使用起来更方便，也更具互操作性。类支持基于原型的继承，调用父类的构造函数，生成实例，静态方法和构造函数。  
 
 ```js
@@ -100,15 +104,15 @@ class SkinnedMesh extends THREE.Mesh {
 }
 ```
 
-### 增强的对象字面量
+### 增强的对象字面量(Enhanced Object Literals)
 
-经扩展后的对象字面量，允许在结构中设置原型，简化了`foo: foo`这样的赋值，定义方法和调用父级。这样使得对象字面量更接近类的声明，并且使得基于对象的设计更加房方便。
+经扩展后的对象字面量，允许在结构中设置原型，简化了`foo: foo`这样的赋值，定义方法和调用父级。这样使得对象字面量更接近类的声明，并且使得基于对象的设计更加方便。
 
 ```js
 var obj = {
     // 设置 prototype
     __proto__: theProtoObj,
-    // 重复的__proto__属性设置原型或触发错误。
+    // 计算属性不会重复设置__proto__，或者将直接触发错误。
     ['__proto__']: somethingElse,
     // ‘handler: handler’ 简写
     handler,
@@ -125,16 +129,16 @@ var obj = {
 
 <blockquote class="babel-callout babel-callout-warning">
   <p>
-    <code>__proto__</code> 需要原生支持, 并且在 ECMAScript 版本中被弃用. 现在大多数引擎支持, 但是 <a href="https://kangax.github.io/compat-table/es6/#__proto___in_object_literals">仍有些不支持</a>. 同样, 注意 <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-additional-ecmascript-features-for-web-browsers">web 浏览器</a> 仍然需要支持该属性, 详细请看 <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-object.prototype.__proto__">附录 B</a>. 该属性在node中支持.
+    <code>__proto__</code> 需要原生支持, 并且在 之前的ECMAScript 版本中已被弃用。虽然现在大多数引擎支持, 但是 <a href="https://kangax.github.io/compat-table/es6/#__proto___in_object_literals">仍有些引擎</a>是不支持的。另外，值得注意的是，如同<a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-object.prototype.__proto__">附录 B</a>所示，只有 <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-additional-ecmascript-features-for-web-browsers">web 浏览器</a> 仍然需要支持该属性。在node中已经被支持。
   </p>
 </blockquote>
 
-### 模版字符串
+### 模版字符串(Template Strings)
 
-模版字符串提供了构建字符串的语法糖，类似于Perl，Python等语言中的字符串插值。可以构建一个自定义标签，避免注入攻击或者从字符串内容中构建更加高级的数据结构
+模版字符串提供了构建字符串的语法糖，类似于Perl，Python等语言中的字符串插值。可以构建一个自定义标签，避免注入攻击或者从字符串内容中构建更加高级的数据结构。
 
 ```js
-// 创建几本的模板字符串
+// 创建基本的模板字符串
 `This is a pretty little template string.`
 
 // 多行字符串
@@ -145,7 +149,7 @@ var obj = {
 var name = "Bob", time = "today";
 `Hello ${name}, how are you ${time}?`
 
-// 不使用转义
+// 不用转义
 String.raw`In ES5 "\n" is a line-feed.`
 
 // 创建一个HTTP请求头的模版字符串，通过替换内容来构建请求
@@ -156,9 +160,14 @@ GET`http://foo.org/bar?a=${a}&b=${b}
       "bar": ${bar}}`(myOnReadyStateChangeHandler);
 ```
 
-### 解构（Destructuring）
+### 解构(Destructuring)
 
-解构允许数组和对象使用模式匹配进行绑定。解构是故障弱化的，类似于标准对象以`foo['foo']`方式查找变量，当没有找到时返回`undefined`。
+解构允许使用模式匹配的方式进行绑定，并支持匹配
+数组和对象。解构具有一定的容错机制，就像查找普通对象`foo['foo']`这样，当没有找到时会返回`undefined`（而不会直接报错）。
+<br>
+<blockquote class="babel-callout babel-callout-warning">
+译者注：当上层结构都不存在时，解构是会报错的，如<code>const [{id: id}] = []</code>，解构数组为空，导致整个obj为<code>undefined</code>，此时再去找<code>obj.id</code>就会报错。
+</blockquote>
 
 ```js
 // 列表（数组）匹配
@@ -178,11 +187,11 @@ function g({name: x}) {
 }
 g({name: 5})
 
-// 弱化解构
+// 解构容错机制
 var [a] = [];
 a === undefined;
 
-// Fail-soft destructuring with defaults
+// 带默认值的解构容错
 var [a = 1] = [];
 a === 1;
 
@@ -193,20 +202,20 @@ function r({x, y, w = 10, h = 10}) {
 r({x:1, y:2}) === 23
 ```
 
-### 默认参数（Default） + 不定参数（Rest） + 扩展运算符（Spread）
+### 默认参数(Default) + 不定参数(Rest) + 扩展运算符(Spread)
 
-调用具有默认参数的函数，将数组转换为连续的函数参数，将连续的函数参数转换为数组。Rest让我们不再需要`arguments`，并且更直接地解决了一些常见的问题。
+默认参数(default)的功能是在函数被调用时对参数做自动估值(若没被赋值，则自动赋值)，扩展运算符(spread)则可以将数组转换为连续的函数参数，不定参数(rest)用在参数末尾，将最末尾的参数转换为数组。不定参数(rest)让我们不再需要`arguments`，更直接地解决了一些常见的问题。
 
 ```js
 function f(x, y=12) {
-  // y is 12 if not passed (or passed as undefined)
+  // 如果没有传入y或传入了undefined，y的默认值为12
   return x + y;
 }
 f(3) == 15
 ```
 ```js
 function f(x, ...y) {
-  // y is an Array
+  // y是一个数组
   return x * y.length;
 }
 f(3, "hello", true) == 6
@@ -215,13 +224,13 @@ f(3, "hello", true) == 6
 function f(x, y, z) {
   return x + y + z;
 }
-// Pass each elem of array as argument
+// 将数组中的每个元素展开为函数参数
 f(...[1,2,3]) == 6
 ```
 
-### Let（局部变量） + Const（常量）
+### Let(定义变量) + Const(定义常量)
 
-新增块级作用域。`let`是新的`var`。`const`是单赋值（仅允许被赋值一次）。静态限制（Static restrictions ）阻止变量在赋值前被使用。
+这两个关键字具有块级作用域。`let`是`var`的升级版。`const`仅允许被赋值一次，通过静态限制（Static restrictions ）的方式阻止变量在赋值前被使用。
 
 
 ```js
@@ -229,22 +238,22 @@ function f() {
   {
     let x;
     {
-      // this is ok since it's a block scoped name
+      // 这是正确的，因为const具有块级作用域
       const x = "sneaky";
-      // error, was just defined with `const` above
+      // 错误，"x"已被定义为const常量，不允许再赋值
       x = "foo";
     }
-    // this is ok since it was declared with `let`
+    // 这是正确的，因为这里的"x"是被let定义的
     x = "bar";
-    // error, already declared above in this block
+    // 错误，"x"已经被定义，不允许再重复定义
     let x = "inner";
   }
 }
 ```
 
-### 迭代器（Iterators） + For..Of循环
+### 迭代器(Iterators) + For..Of循环
 
-迭代器对象允许像 CLR IEnumerable 或者 Java Iterable 一样自定义迭代器。将`for..in`转换为自定义的基于迭代器的形如`for..of`的迭代，不需要实现一个数组，支持像 LINQ 一样的惰性设计模式。
+ES6中的迭代器对象允许像 CLR(Common Language Runtime)的IEnumerable 接口或者 Java 的 Iterable 一样创建自定义迭代器，可以将`for..in`这种遍历模式更加一般化为`for..of`的形式。它是支持惰性模式的，不需要真正实现一个数组（只需要实现Iterator接口），就像LINQ语言那样。
 
 ```js
 // 实现斐波那契数列的迭代器
@@ -268,7 +277,7 @@ for (var n of fibonacci) {
 }
 ```
 
-迭代器基于如下的鸭子类型的借口（使用[TypeScript](http://typescriptlang.org) 类型的语法来解析）：
+迭代器还可以基于"鸭子类型"来实现（使用[TypeScript](http://typescriptlang.org) 这种基于类型的语法来说明）：
 
 ```ts
 interface IteratorResult {
@@ -292,9 +301,9 @@ interface Iterable {
 
 ### Generators
 
-Generator通过使用`function*`和`yield`关键字简化了迭代器的编写。一个通过`function*`声明的函数会返回一个Generators实例。Generator是迭代器包含额外的`next`和`throw`方法的子类型。这些特性使得值可以流回Generator，故`yield`是一个可以返回（或抛出）值的表达式。
+Generator通过使用`function*`和`yield`关键字简化了迭代器的编写。通过`function*`声明的函数会返回一个Generators实例。Generator可以看做是迭代器的子类，包含了额外的`next`和`throw`方法。这些特性可以让得到的结果值再传回Generator，因此`yield`是一个具有返回值（或抛出一个值）的表达式。
 
-标注：也可以用于使用‘await’这样的异步编程，详见ES7 `await` [协议](https://github.com/lukehoban/ecmascript-asyncawait).
+注意：Generator也可以用于使用‘await’这样的异步编程中，详见ES7 `await` [协议](https://github.com/lukehoban/ecmascript-asyncawait).
 
 ```js
 var fibonacci = {
@@ -317,7 +326,7 @@ for (var n of fibonacci) {
 }
 ```
 
-Generator 同样 (使用 [TypeScript](http://typescriptlang.org) 类型的语法解析):
+Generator 接口 (使用[TypeScript](http://typescriptlang.org) 这种基于类型的语法来说明):
 
 ```ts
 interface Generator extends Iterator {
@@ -333,13 +342,15 @@ interface Generator extends Iterator {
   </p>
 </blockquote>
 
-### Comprehensions
+### Comprehensions(Generator推导式)
 
-Babel 6.0 移除了
+Babel 6.0 移除了。
+
+(译者注：[Generator Comprehensions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Generator_comprehensions)在14年8月27号修订中被移除了，不属于标准语法。)
 
 ### Unicode 编码
 
-新增了一系列的扩展来支持完整的unicode编码，其中包括字符串中新的unicode语法格式，正则表达式的`u`模式来处理代码点，新的API也让字符串可以处理21位的代码点（code points）。这些新特性允许我们使用JavaScript构建国际化的应用。
+ES6 加强了对 Unicode 的支持，包括新的unicode表示法，正则表达式的`u`模式来匹配码点（code points），也提供新的API去处理21位的码点（code points）。这些新特性允许我们使用JavaScript构建国际化的应用。
 
 ```js
 // 和ES5.1相同
@@ -348,21 +359,21 @@ Babel 6.0 移除了
 // 正则表达式新的u模式
 "𠮷".match(/./u)[0].length == 2
 
-// 新的unicode格式
+// 新的unicode表示法
 "\u{20BB7}" == "𠮷" == "\uD842\uDFB7"
 
 // 新的字符串方法
 "𠮷".codePointAt(0) == 0x20BB7
 
-// for of迭代代码点
+// for of迭代码点
 for(var c of "𠮷") {
   console.log(c);
 }
 ```
 
-### 模块（Modules） 
+### 模块(Modules)
 
-为了定义组件，从语言层面对模块进行了支持。编写方式借鉴了流行的JavaScript模块加载器（AMD, CommonJS）。由主机定义的默认加载器定义运行时的行为。使用隐式异步模式——在模块可以被获取和加载前不会有代码执行。
+ES6从语言层面对模块进行了支持。编写方式借鉴了流行的JavaScript模块加载器（AMD, CommonJS）。由宿主环境的默认加载器定义模块运行时的行为，采取隐式异步模式——在模块可以被获取和加载前不会有代码执行。
 
 ```js
 // lib/math.js
@@ -382,7 +393,7 @@ import {sum, pi} from "lib/math";
 console.log("2π = " + sum(pi, pi));
 ```
 
-以及一些额外的功能：`export default` and `export *`:
+还有的功能包括：`export default` and `export *`:
 
 ```js
 // lib/mathplusplus.js
@@ -405,12 +416,12 @@ console.log("e^π = " + exp(pi));
   </p>
 </blockquote>
 
-### 模块加载器（Module Loaders）
+### 模块加载器(Module Loaders)
 
 <blockquote class="babel-callout babel-callout-warning">
   <h4>非ES2015部分</h4>
   <p>
-    并不是ES2015的一部分：这部分ECMAScript 2015规范是由实现定义（implementation-defined）的。最终的标准将在WHATWG的<a href="https://whatwg.github.io/loader/">Loader 规范</a>, 中确定。下面的内容来自于之前的ES2015草稿。
+    这并不是ES2015的一部分：这部分ECMAScript 2015规范是由实现定义（implementation-defined）的。最终的标准将在WHATWG的<a href="https://whatwg.github.io/loader/">Loader 规范</a>中确定，目前这项工作正在进行中，下面的内容来自于之前的ES2015草稿。
   </p>
 </blockquote>
 
@@ -422,7 +433,7 @@ console.log("e^π = " + exp(pi));
 - 编译钩子（Compilation hooks）
 - 嵌套虚拟化（Nested virtualization）
 
-你可以对默认的加载器进行配置，新的加载器能构建评估并在独立或受限的上下文中加载代码。
+你可以对默认的加载器进行配置，构建出新的加载器，可以被加载于独立或受限的执行环境。
 
 ```js
 // 动态加载 – ‘System’ 是默认的加载器
@@ -493,9 +504,9 @@ ws.add({ data: 42 });
   </p>
 </blockquote>
 
-### Proxies（代理对象）
+### Proxies(代理对象)
 
-代理对象可以创建一个具有目标对象全部行为的对象。可用于拦截，对象的虚拟化，记录/分析等。
+Proxies允许创建一个可以全范围控制宿主对象行为的对象，可用于拦截，对象的虚拟化，日志记录/性能分析等。
 
 ```js
 // 代理普通对象
@@ -523,7 +534,7 @@ var p = new Proxy(target, handler);
 p() === "I am the proxy";
 ```
 
-下面是所有运行级别元操作（meta-operations）中可能出现的traps：
+下面是完全在运行态的元操作（meta-operations）中可能出现的trap：
 
 ```js
 var handler =
@@ -587,7 +598,7 @@ Symbol对对象的状态进行访问控制。Symbol允许对象的属性不仅�
     }
   };
 
-  // 被Bable部分支持，原生环境可以完全实现
+  // Bable只能有限支持，完全支持需要原生实现
   typeof key === "symbol"
 })();
 
@@ -602,7 +613,7 @@ c["key"] === undefined
   </p>
 </blockquote>
 
-### 可以创建内建对象的子类
+### 可以被继承(子类化)的内建对象(Subclassable Built-ins)
 
 在ES2015中，可以创建内建对象如`Array `，`Date`以及`DOMElement`的子类。
 
@@ -704,7 +715,7 @@ var p = timeout(1000).then(() => {
 
 ### Reflect API
 
-完整的Reflect API使得可以在运行级别对对象进行元操作。它相当与是Proxy API的逆，并允许调用对应的元操作，如proxy traps。这使得它在实现Proxy时非常有用。
+完整的Reflect API暴露在对象的运行级元操作上。它可以用来有效地还原Proxy API，并允许调用相应的proxy traps，尤其是在执行proxies时非常有用。
 
 ```js
 var O = {a: 1};
@@ -727,9 +738,9 @@ instance.c; // 42
   </p>
 </blockquote>
 
-### Tail Calls
+### Tail Calls(尾调用)
 
-现在递归调用函数不用担心栈无限增长，使得递归算法在面对无限的输入时更加安全。
+尾递归调用可以保证调用栈不会无限增长，使得在无界输入的情况下，递归算法是安全的。
 
 ```js
 function factorial(n, acc = 1) {
@@ -738,7 +749,7 @@ function factorial(n, acc = 1) {
     return factorial(n - 1, n * acc);
 }
 
-// 如今运行这段代码会导致栈溢出
+// 在绝大多数JS引擎中运行这段代码会导致栈溢出
 // 但是在ES2015中，即便输入很随意也可以安全运行
 factorial(100000)
 ```
@@ -747,6 +758,7 @@ factorial(100000)
   <h4>已经被bable6移除</h4>
   <p>
     该特性仅支持直接对自身引用的递归。由于功能本身的复杂性和表现冲突，使得该特性无法在全局下支持。
+    移除是因为还有其他bug产生，它会被重新实现。
   </p>
 </blockquote>
 
