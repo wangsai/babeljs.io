@@ -60,7 +60,7 @@ members:
   - name: James Henry
     github: JamesHenry
     twitter: MrJamesHenry
-    orgs: [eslint]    
+    orgs: [eslint]
   - name: Teddy Katz
     github: not-an-aardvark
     orgs: [eslint]
@@ -85,7 +85,7 @@ members:
     twitter: the_gisenberg
     orgs: [tc39]
   - name: Jordan Harband
-    github: ljharb  
+    github: ljharb
     twitter: ljharb
     orgs: [tc39]
   - name: Kent C. Dodds
@@ -183,7 +183,7 @@ alumnus:
     github: kangax
     twitter: kangax
   - name: Moti Zilberman
-    github: motiz88 
+    github: motiz88
     twitter: motiz88
   - name: Sebastian McKenzie
     github: kittens
@@ -202,3 +202,5 @@ chinese-translation-contributors:
     github: MenciusCheng
   - name: 王赛
     github: wangsai
+  - name: 孟健
+    github: erasermeng
