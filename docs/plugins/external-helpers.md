@@ -1,61 +1,57 @@
 ---
 layout: docs
-title: External helpers
+title: 外部 helpers
 description:
 permalink: /docs/plugins/external-helpers/
 package: babel-plugin-external-helpers
 ---
 
-## Detail
+## 详情
 
-Babel has a few helper functions that'll be placed at the top of the generated
-code if needed so it's not inlined multiple times throughout that file. This may
-become an issue if you have multiple files, especially when you're sending them
-to the browser. gzip alleviates most of this concern but it's still not ideal.
+Bable 有一些 helper 函数，如果需要的话，它将被放置在生成的代码的顶部，所以在整个文件中不会内联多次。如果你有多个文件，这可能会成为一个问题，特别是把文件发送到浏览器。gzip缓解了大部分问题，但仍然不理想。
 
-You can tell Babel to not place any declarations at the top of your files and
-instead just point them to a reference contained within the external helpers.
+你可以告诉Babel不要在你的文件的顶部放置任何声明，相反只需在外部 helper 中引用他们。
 
-### Getting the external helpers
+### 获取外部 helpers
 
-To build the helpers, you will need to use `babel-cli`. You can install `babel-cli` with:
+你需要使用 `babel-cli` 来构建helpers. 你可以安装 `babel-cli` ：
 
 ```sh
 npm install babel-cli --save-dev
 ```
 
-This will add `babel-external-helpers` to your .bin.
+将在你的.bin文件中添加 `babel-external-helpers`。
 
-You can output the file using
+你可以使用下列语句来输出这个文件。
 
 ```sh
 ./node_modules/.bin/babel-external-helpers [options] > helpers.js
 ```
 
-You need to import/inject this file before executing your own code (instructions below).
+您需要在执行代码之前导入/注入此文件（以下说明）。
 
-#### Options
+#### 选项
 
-| Option                     | Default              | Description                                 |
+| 选项                        | 默认              | 描述                                 |
 | -------------------------- | -------------------- | ------------------------------------------- |
-| `-t, --output-type [type]` | `global`             | Set output format: `global`, `umd` or `var` |
-| `-l, --whitelist`          |                      | Whitelist of helpers to ONLY include        |
+| `-t, --output-type [type]` | `global`             | 设置输出格式: `global`, `umd` 或者 `var` |
+| `-l, --whitelist`          |                      | 只包括helpers的白名单        |
 
-### Output formats
+### 输出格式
 
 #### global
 
-`global` output format sets helpers as global variable by adding `babelHelpers` to `global` or `self`.
+通过添加 `babelHelpers` 到 `global` or `self`， `global` 输出格式将设置 helpers 为全局变量。
 
 #### umd
 
-`umd` output format wraps helpers in UMD compatible with browsers, CommonJS and AMD.
+`umd` 输出格式用UMD封装 helpers 用以兼容浏览器，CommonJS 和 AMD。
 
 #### var
 
-`var` outputs variable `babelHelpers` (`var babelHelpers = {}`) and helpers are assigned to it. This output format is suitable for additional processing.
+`var` 输出变量 `babelHelpers` (`var babelHelpers = {}`) 和 helpers 来给它赋值。这种输出格式适合于进一步的处理。
 
-### Injecting the external helpers
+### 注入外部helpers
 
 #### Node
 
@@ -63,14 +59,14 @@ You need to import/inject this file before executing your own code (instructions
 require("babel-core").buildExternalHelpers();
 ```
 
-This injects the external helpers into `global`.
+将外部 helpers 注入 `global`。
 
-#### Browser
+#### 浏览器
 
 ```html
 <script type="application/javascript" src="your-path-to/babel/external-helpers.js"></script>
 ```
 
-In a browser environment you can use a `<script>` tag to inject the `babelHelpers` into the `window` object.
+在浏览器环境中，您可以使用 `<script>` 标签，将 `babelHelpers` 注入 `window` 对象中。
 
 {% include package_readme.html %}
