@@ -8,7 +8,7 @@ permalink: /faq/
 ## 为什么 `for...of` 的输出那么冗长和难看？
 
 为了符合规范，迭代器的返回方法必须被报错方法调用。另一种方法是启用[松散模式](/docs/plugins/transform-es2015-for-of/#options-loose)，
-但请注意，如果你启用松散模式那注意事项有**很多**，而且你愿意选择非规范。
+但请注意，如果你启用松散模式那会有**很多**注意事项，而且你愿意选择非规范。
 
 了解更多信息请查看 [google/traceur-compiler#1773](https://github.com/google/traceur-compiler/issues/1773) 和
 [babel/babel#838](https://github.com/babel/babel/issues/838)。
