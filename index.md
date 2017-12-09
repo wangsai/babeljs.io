@@ -85,7 +85,7 @@ npm install --save-dev babel-cli babel-preset-env
       <h2 id="es2015-and-beyond">ES2015 及更高版本</h2>
       <p>
         Babel 通过语法转换器支持最新版本的 JavaScript 。
-        这些 <a href="https://babeljs.io/docs/plugins/">plugins</a> 允许你<strong>立刻</strong>使用新语法，无需等待浏览器支持。
+        这些<a href="https://babeljs.io/docs/plugins/">插件</a>允许你<strong>立刻</strong>使用新语法，无需等待浏览器支持。
         查看 <a href="https://babeljs.io/docs/plugins/preset-env">env preset</a> 开始使用 Babel 。
       </p>
 
