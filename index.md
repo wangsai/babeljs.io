@@ -21,7 +21,7 @@ third_party_js:
         </div>
 
         <div class="hero-repl__pane hero-repl__pane--right">
-          <h3>获取浏览器兼容的 JavaScript </h3>
+          <h3>获取浏览器兼容的 JavaScript 代码</h3>
           <div id="hero-repl-out" class="hero-repl__code"></div>
           <div class="hero-repl__error"></div>
         </div>
@@ -38,7 +38,7 @@ third_party_js:
     <div class="hero-actions">
       <div class="hero-actions-blog">
         <a href="{{ latest_post.url }}">
-          <span class="hero-actions-blog__label">最新的博客:</span>
+          <span class="hero-actions-blog__label">来自我们博客的最新动态：</span>
           <span class="hero-actions-blog__post">{{ latest_post.title }}</span>
         </a>
       </div>
@@ -61,7 +61,7 @@ npm install --save-dev babel-cli babel-preset-env
       </div>
     </div>
     <div class="col-lg-6">
-      <h3>创建一个 <a href="/docs/usage/babelrc"><code>.babelrc</code></a> 文件 (或者使用你的 <a href="/docs/usage/babelrc#use-via-packagejson">package.json</a>)</h3>
+      <h3>创建一个 <a href="/docs/usage/babelrc"><code>.babelrc</code></a> 文件（或者使用你的 <a href="/docs/usage/babelrc#use-via-packagejson">package.json</a>）</h3>
       <div class="text-left">
 <div markdown="1">
 ```json
@@ -74,7 +74,7 @@ npm install --save-dev babel-cli babel-preset-env
     </div>
 
     <p>
-      有关在构建系统、IDE等设置 Babel 的更多信息，请查看我们的<a href="/docs/setup">交互设置指南</a>.
+      有关在构建系统、IDE等设置 Babel 的更多信息，请查看我们的<a href="/docs/setup">交互设置指南</a>。
     </p>
   </div>
 
@@ -82,10 +82,10 @@ npm install --save-dev babel-cli babel-preset-env
 
   <div class="row featurette">
     <div class="col-md-6">
-      <h2 id="es2015-and-beyond">ES2015及更高版本</h2>
+      <h2 id="es2015-and-beyond">ES2015 及更高版本</h2>
       <p>
-        Babel通过语法转换器支持最新版本的 JavaScript 。
-        这些 <a href="https://babeljs.io/docs/plugins/">plugins</a> 允许你<strong>立刻</strong>使用语法，无需等待浏览器支持。
+        Babel 通过语法转换器支持最新版本的 JavaScript 。
+        这些 <a href="https://babeljs.io/docs/plugins/">plugins</a> 允许你<strong>立刻</strong>使用新语法，无需等待浏览器支持。
         查看 <a href="https://babeljs.io/docs/plugins/preset-env">env preset</a> 开始使用 Babel 。
       </p>
 
@@ -149,7 +149,7 @@ npm install --save-dev babel-preset-env
     <div class="row featurette">
       <div class="col-md-6">
         <h2 id="polyfill">Polyfill</h2>
-        <p>由于 Babel 只转换语法 (如箭头函数)， 你可以使用 babel-polyfill 支持新的全局变量，例如 Promise 、新的原生方法如 String.padStart (left-pad) 等。 它使用了 <a href="https://github.com/zloirock/core-js">core-js</a> 和 <a href="https://facebook.github.io/regenerator/">regenerator</a>。 查看 <a href="/docs/usage/polyfill">babel-polyfill</a> 文档获取更多信息。</p>
+        <p>由于 Babel 只转换语法(如箭头函数)， 你可以使用 babel-polyfill 支持新的全局变量，例如 Promise 、新的原生方法如 String.padStart (left-pad) 等。 它使用了 <a href="https://github.com/zloirock/core-js">core-js</a> 和 <a href="https://facebook.github.io/regenerator/">regenerator</a>。 查看 <a href="/docs/usage/polyfill">babel-polyfill</a> 文档获取更多信息。</p>
 
         <p>你可以通过以下方式安装 polyfill </p>
 <div markdown="1">
@@ -157,7 +157,7 @@ npm install --save-dev babel-preset-env
 npm install --save-dev babel-polyfill
 ```
 </div>
-        <p>使用它时需要让它在你的应用程序的入口起点或打包配置的入口起点的顶部。</p>
+        <p>使用它时需要在你应用程序的入口点顶部或打包配置中引入。</p>
       </div>
 
       <div class="col-md-6">
@@ -219,7 +219,7 @@ npm install --save-dev babel-polyfill
 
     <div class="col-md-7">
       <h2 id="jsx-and-flow">JSX 和 Flow</h2>
-      <p>Babel能够转换 JSX 语法并去除类型注释。查看 <a href="https://babeljs.io/docs/plugins/preset-react/">React preset</a> 开始使用。与 <a href="https://github.com/babel/babel-sublime">babel-sublime</a> 同时使用可以将语法高亮提高到一个新的水平。</p>
+      <p>Babel 能够转换 JSX 语法并去除类型注释。查看 <a href="https://babeljs.io/docs/plugins/preset-react/">React preset</a> 开始使用。与 <a href="https://github.com/babel/babel-sublime">babel-sublime</a> 同时使用将语法高亮提高到一个全新的层次。</p>
 
       <p>你可以通过以下方式安装 preset </p>
 <div markdown="1">
@@ -255,20 +255,20 @@ npm install --save-dev babel-preset-react
 
   <div class="row featurette">
     <div class="col-md-6">
-      <h2 id="pluggable">插件化</h2>
-      <p>Babel 是由很多 plugin 构成。 你可以使用已有的 plugin 或者自己编写 plugin 来组成属于你自己的转换通道。使用或者创建一个 <a href="/docs/plugins/#presets">preset</a> 可以让你轻松使用多个 plugin。<a href="/docs/plugins/">了解更多 &rarr;</a></p>
+      <h2 id="pluggable">可插拔</h2>
+      <p>Babel 是建立在插件之外的。 你可以使用已有的插件或者自己编写插件来组成属于你自己的转换管道。使用或者创建一个 <a href="/docs/plugins/#presets">preset</a> 可以让你轻松使用多个插件。<a href="/docs/plugins/">了解更多 &rarr;</a></p>
       <p>通过 <a href="https://astexplorer.net/#/KJ8AjD6maa">astexplorer.net</a> 快速创建一个插件或者使用 <a href="https://github.com/babel/generator-babel-plugin">generator-babel-plugin</a> 生成一个插件模板</p>
     </div>
     <div class="col-md-6">
 <div markdown="1">
 ```javascript
-// A plugin is just a function
+// 一个插件只是一个函数
 export default function ({types: t}) {
   return {
     visitor: {
       Identifier(path) {
         let name = path.node.name;
-        // reverse the name: JavaScript -> tpircSavaJ
+        // 反转 name: JavaScript -> tpircSavaJ
         path.node.name = name.split('').reverse().join('');
       }
     }
@@ -343,7 +343,7 @@ export default function ({types: t}) {
   <div class="featurette">
     <h2 class="text-center">
       <a href="{{ site.baseurl }}/users/">
-        谁在使用 Babel ?
+        谁在使用 Babel?
       </a>
     </h2>
 
@@ -359,7 +359,7 @@ export default function ({types: t}) {
 
     <div class="text-center">
       <div class="btn-wrapper">
-        <a href="{{ site.baseurl }}/users/" class="btn btn-sm btn-featured">查看更多用户</a>
+        <a href="{{ site.baseurl }}/users/" class="btn btn-sm btn-featured">发现更多用户</a>
       </div>
     </div>
   </div>
