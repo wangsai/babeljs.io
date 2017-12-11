@@ -38,7 +38,7 @@ custom_js_with_timestamps:
       <h2><span class="step-no">4</span> 创建 <code>.babelrc</code> 配置文件</h2>
 
       <p>
-        虽然已经配置好了 Babel ，但并没有让它真正<em>生效</em>。在项目的根目录中创建一个 <a href="/docs/usage/babelrc">.babelrc</a> 的文件并启用一些 <a href="/docs/plugins">plugin</a> 。
+        非常棒！虽然已经配置好了 Babel ，但并没有让它真正<em>生效</em>。在项目的根目录中创建一个 <a href="/docs/usage/babelrc">.babelrc</a> 文件并启用一些<a href="/docs/plugins">插件</a>。
       </p>
 
       <p>
@@ -54,7 +54,7 @@ npm install babel-preset-env --save-dev
 <!--lint enable no-shortcut-reference-link, no-undefined-references-->
 
       <p>
-        为了让 preset 生效，你需要像下面这样定义你的 <code>.babelrc</code> 文件:
+        为了让 preset 生效，你需要像下面这样定义你的 <code>.babelrc</code> 文件：
       </p>
 
 <!--lint disable no-shortcut-reference-link, no-undefined-references-->
