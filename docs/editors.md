@@ -13,7 +13,7 @@ permalink: /docs/editors
 
 如果你想要更高级的集成，你可以查看[安装](/docs/setup)指南。
 
-**提示:** 上面截图中使用的字体是 [FiraCode](https://github.com/tonsky/FiraCode)。
+**提示：** 上面截图中使用的字体是 [FiraCode](https://github.com/tonsky/FiraCode)。
 
 ### Atom
 
@@ -26,9 +26,9 @@ permalink: /docs/editors
 
 ### Vim
 
-安装 [vim-javascript](https://github.com/pangloss/vim-javascript) 插件，它同时提供了语法高亮和 Vim 的 JavaScript 缩进支持。
+安装 [vim-javascript](https://github.com/pangloss/vim-javascript) 插件，它为 Vim 提供了改进的语法高亮和 JavaScript 缩进支持。
 
-也可以使用 [yajs.vim](https://github.com/othree/yajs.vim) 和 [es.next.syntax](https://github.com/othree/es.next.syntax.vim)。
+另一个方法是和 [es.next.syntax](https://github.com/othree/es.next.syntax.vim) 一起使用 [yajs.vim](https://github.com/othree/yajs.vim)。
 
 ### Visual Studio Code
 
