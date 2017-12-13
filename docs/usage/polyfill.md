@@ -8,9 +8,9 @@ package: babel-polyfill
 
 <p class="lead">
 Babel 包含一个可自定义
-  <a href="https://github.com/facebook/regenerator/blob/master/packages/regenerator-runtime/runtime.js">regenerator runtime</a>
+ <a href="https://github.com/facebook/regenerator/blob/master/packages/regenerator-runtime/runtime.js">regenerator runtime</a>
   和 <a href="https://github.com/zloirock/core-js">core-js</a> 的 
-  <a href="https://en.wikipedia.org/wiki/Polyfill">polyfill</a>.
+  <a href="https://en.wikipedia.org/wiki/Polyfill_(programming)">polyfill</a> .
 </p>
 
 它会仿效一个完整的 ES2015+ 环境，并意图运行于一个应用中而不是一个库/工具。这个 polyfill 会在使用 `babel-node` 时自动加载。
