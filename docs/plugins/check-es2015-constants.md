@@ -1,15 +1,15 @@
 ---
 layout: docs
-title: ES2015 constants check
-description: Validate ES2015 constants
+title: ES2015 常量检查
+description: 验证 ES2015 常量
 permalink: /docs/plugins/check-es2015-constants/
 package: babel-plugin-check-es2015-constants
 ---
 
 <blockquote class="babel-callout babel-callout-info">
-  <h4>Syntax only</h4>
+  <h4>仅限语法</h4>
   <p>
-    This check will only validate consts. If you need it to compile down to `var` then you must also install and enable <a href="/docs/plugins/transform-es2015-block-scoping">transform-es2015-block-scoping</a>.
+    此检查只会检查常量。如果你需要将其编译为 `var` 你还必须安装和启用 <a href="/docs/plugins/transform-es2015-block-scoping">transform-es2015-block-scoping</a>.
   </p>
 </blockquote>
 
