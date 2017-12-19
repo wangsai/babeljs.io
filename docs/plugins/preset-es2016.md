@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: ES2016 preset
-description: 只编译 ES2015 到 ES2016 之间的内容
+description: 只编译 ES2016 的内容（到 ES2015）
 permalink: /docs/plugins/preset-es2016/
 package: babel-preset-es2016
 ---
