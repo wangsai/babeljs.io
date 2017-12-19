@@ -17,7 +17,7 @@ export type PluginConfig = {
   baseUrl?: string,
   isPreLoaded?: boolean,
   label: string,
-  package?: string,
+  package: string,
   version?: string,
 };
 
@@ -54,7 +54,7 @@ export type CompileConfig = {
   useBuiltIns: boolean,
 };
 
-export type PersistedState = {
+export type ReplState = {
   babili: boolean,
   browsers: string,
   build: string,
