@@ -8,7 +8,7 @@ package: babel-plugin-syntax-class-constructor-call
 
 <blockquote class="babel-callout babel-callout-warning">
   <h4>类构造器是一个被弃用的功能</h4>
-  <p>类构造器调用提案已经被撤回 (<a href="https://github.com/tc39/ecma262/blob/master/withdrawn-proposals.md#withdrawn-proposals">撤回提案</a>) 并 <a href="https://github.com/babel/babel/wiki/Babel-7">将在 Babel 7 中弃用</a>。</p>
+  <p>类构造器调用提案已经被撤回 (<a href="https://github.com/tc39/ecma262/blob/master/withdrawn-proposals.md#withdrawn-proposals">撤回提案</a>) 并 <a href="https://github.com/babel/babel/wiki/Babel-7">将在 Babel 7 中被移除</a>。</p>
 </blockquote>
 
 <blockquote class="babel-callout babel-callout-info">
