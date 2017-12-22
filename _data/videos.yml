@@ -20,7 +20,7 @@
       year: 2017
       event: JSConf EU
       event_link: https://2017.jsconf.eu/
-      link: https://v.qq.com/iframe/player.html?vid=h0568a0eskg&tiny=0&auto=0
+      link: http://player.youku.com/embed/XMzI1MDkzNTY0OA==
     - title: How to Build a Compiler
       author: James Kyle
       author_link: https://twitter.com/thejameskyle
@@ -34,49 +34,49 @@
       year: 2016
       event: dotJS
       event_link: https://2016.dotjs.io/
-      link: https://v.qq.com/iframe/player.html?vid=u0501k33zc1&tiny=0&auto=0
+      link: http://player.youku.com/embed/XMzI1MjY4NTEzMg==
     - title: Closing Keynote, Babel 6.0
       author: Sebastian McKenzie
       author_link: https://twitter.com/sebmck
       year: 2015
       event: EmberCamp London
       event_link: http://embercamp.com/2015/
-      link: https://v.qq.com/iframe/player.html?vid=h0500xdt54h&tiny=0&auto=0
+      link: http://player.youku.com/embed/XMzI1MTA1MTM4MA==
     - title: Improving Your Workflow With Code Transformation
       author: Sebastian McKenzie
       author_link: https://twitter.com/sebmck
       year: 2015
       event: React Europe
       event_link: https://2015.react-europe.org/
-      link: https://v.qq.com/iframe/player.html?vid=w0500xptt52&tiny=0&auto=0
+      link: http://player.youku.com/embed/XMzI1MjY1Njg4NA==
     - title: JavaScript Tooling in the Future
       author: James Kyle
       author_link: https://twitter.com/thejameskyle
       year: 2015
       event: Forward 3
       event_link: https://forwardjs.com/
-      link: https://v.qq.com/iframe/player.html?vid=f05008tdfmh&tiny=0&auto=0
+      link: http://player.youku.com/embed/XMzI1MjY1NDQ4OA==
     - title: Compiling JavaScript
       author: James Kyle
       author_link: https://twitter.com/thejameskyle
       year: 2015
       event: jQuerySF
       event_link: http://jquerysf.com/
-      link: https://v.qq.com/iframe/player.html?vid=i05005fhbfh&tiny=0&auto=0
+      link: http://player.youku.com/embed/XMzI1MTA1NzgwMA==
     - title: Consolidation of Tools
       author: Sebastian McKenzie
       author_link: https://twitter.com/sebmck
       year: 2015
       event: BrazilJS
       event_link: https://braziljs.org/
-      link: https://v.qq.com/iframe/player.html?vid=n0501elpack&tiny=0&auto=0
+      link: http://player.youku.com/embed/XMzI1MjY3MjkwNA==
     - title: JavaScript Transformation
       author: Sebastian McKenzie
       author_link: https://twitter.com/sebmck
       year: 2015
       event: JSConf US
       event_link: http://2015.jsconf.us/
-      link: https://v.qq.com/iframe/player.html?vid=r0501x073z8&tiny=0&auto=0
+      link: http://player.youku.com/embed/XMzI1MjY3NzkzNg==
 - category: Meetups
   items:
     - title: Babel Sucks
