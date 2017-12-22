@@ -6,77 +6,77 @@
       year: 2017
       event: React Rally
       event_link: http://www.reactrally.com/
-      link: http://player.youku.com/embed/XMzI1MDg2NDg1Ng==
+      link: https://player.youku.com/embed/XMzI1MDg2NDg1Ng==
     - title: Writing custom Babel and ESLint plugins with ASTs
       author: Kent C. Dodds
       author_link: https://twitter.com/kentcdodds
       year: 2017
       event: Open West
       event_link: https://kentcdodds.com/talks/#writing-custom-babel-and-eslint-plugins-with-asts
-      link: http://player.youku.com/embed/XMzI1MDk0Njk0NA==
+      link: https://player.youku.com/embed/XMzI1MDk0Njk0NA==
     - title: Maintaining an OSS Project (Babel)
       author: Henry Zhu
       author_link: https://twitter.com/left_pad
       year: 2017
       event: JSConf EU
       event_link: https://2017.jsconf.eu/
-      link: http://player.youku.com/embed/XMzI1MDkzNTY0OA==
+      link: https://player.youku.com/embed/XMzI1MDkzNTY0OA==
     - title: How to Build a Compiler
       author: James Kyle
       author_link: https://twitter.com/thejameskyle
       year: 2016
       event: EmberConf
       event_link: http://2016.emberconf.com/
-      link: http://player.youku.com/embed/XMzI1MDk3NzUyMA==
+      link: https://player.youku.com/embed/XMzI1MDk3NzUyMA==
     - title: Tuning Babel to Your Runtimes
       author: Christophe Porteneuve
       author_link: https://twitter.com/porteneuve
       year: 2016
       event: dotJS
       event_link: https://2016.dotjs.io/
-      link: http://player.youku.com/embed/XMzI1MjY4NTEzMg==
+      link: https://player.youku.com/embed/XMzI1MjY4NTEzMg==
     - title: Closing Keynote, Babel 6.0
       author: Sebastian McKenzie
       author_link: https://twitter.com/sebmck
       year: 2015
       event: EmberCamp London
       event_link: http://embercamp.com/2015/
-      link: http://player.youku.com/embed/XMzI1MTA1MTM4MA==
+      link: https://player.youku.com/embed/XMzI1MTA1MTM4MA==
     - title: Improving Your Workflow With Code Transformation
       author: Sebastian McKenzie
       author_link: https://twitter.com/sebmck
       year: 2015
       event: React Europe
       event_link: https://2015.react-europe.org/
-      link: http://player.youku.com/embed/XMzI1MjY1Njg4NA==
+      link: https://player.youku.com/embed/XMzI1MjY1Njg4NA==
     - title: JavaScript Tooling in the Future
       author: James Kyle
       author_link: https://twitter.com/thejameskyle
       year: 2015
       event: Forward 3
       event_link: https://forwardjs.com/
-      link: http://player.youku.com/embed/XMzI1MjY1NDQ4OA==
+      link: https://player.youku.com/embed/XMzI1MjY1NDQ4OA==
     - title: Compiling JavaScript
       author: James Kyle
       author_link: https://twitter.com/thejameskyle
       year: 2015
       event: jQuerySF
       event_link: http://jquerysf.com/
-      link: http://player.youku.com/embed/XMzI1MTA1NzgwMA==
+      link: https://player.youku.com/embed/XMzI1MTA1NzgwMA==
     - title: Consolidation of Tools
       author: Sebastian McKenzie
       author_link: https://twitter.com/sebmck
       year: 2015
       event: BrazilJS
       event_link: https://braziljs.org/
-      link: http://player.youku.com/embed/XMzI1MjY3MjkwNA==
+      link: https://player.youku.com/embed/XMzI1MjY3MjkwNA==
     - title: JavaScript Transformation
       author: Sebastian McKenzie
       author_link: https://twitter.com/sebmck
       year: 2015
       event: JSConf US
       event_link: http://2015.jsconf.us/
-      link: http://player.youku.com/embed/XMzI1MjY3NzkzNg==
+      link: https://player.youku.com/embed/XMzI1MjY3NzkzNg==
 - category: Meetups
   items:
     - title: Babel Sucks
