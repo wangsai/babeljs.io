@@ -1,12 +1,12 @@
 ---
 layout: docs
 title: Stage 3 preset
-description: 所有使用 stage 3 阶段的代码必备的 plugin
+description: 所有使用 stage 3 阶段的代码必备的插件
 permalink: /docs/plugins/preset-stage-3/
 package: babel-preset-stage-3
 ---
 
-该 preset 包含以下 plugin:
+该 preset 包含以下插件：
 
 - [transform-object-rest-spread](/docs/plugins/transform-object-rest-spread/)
 - [transform-async-generator-functions](/docs/plugins/transform-async-generator-functions/)
