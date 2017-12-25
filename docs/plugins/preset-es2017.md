@@ -1,41 +1,41 @@
 ---
 layout: docs
 title: ES2017 preset
-description: Only compiles what's in ES2017 to ES2016
+description: 只编译 ES2017 的内容（到 ES2016）
 permalink: /docs/plugins/preset-es2017/
 package: babel-preset-es2017
 ---
 
-> If you want to stay up to date, use the [env preset](/docs/plugins/preset-env/)
+> 如果你想保持最新版本，请使用 [env preset](/docs/plugins/preset-env/)
 
-This preset includes the following plugins:
+这个 preset 依赖以下这些插件:
 
 - [syntax-trailing-function-commas](/docs/plugins/syntax-trailing-function-commas/)
 - [transform-async-to-generator](/docs/plugins/transform-async-to-generator/)
 
-## Basic Setup (with the CLI)
+## 基本配置 (使用 CLI)
 
-> For more info, check out the setup page on the [cli](/docs/setup/) and the [usage](/docs/usage/cli/) docs.
+> 欲了解更多，请查看 [cli](/docs/setup/) 的设置页面及其[使用](/docs/usage/cli/)相关文档。
 
-Install the CLI and this preset
+安装 CLI 及该 preset
 
 ```sh
 npm install --save-dev babel-cli babel-preset-es2017
 ```
 
-Make a .babelrc config file with the preset
+为 preset 创建 .babelrc 配置文件
 
 ```sh
 echo '{ "presets": ["es2017"] }' > .babelrc
 ```
 
-Create a file to run on
+创建要运行的文件
 
 ```sh
 echo 'function a(b,) { console.log("hi"); }; a()' > index.js
 ```
 
-Run it
+运行它
 
 ```sh
 ./node_modules/.bin/babel-node index.js
