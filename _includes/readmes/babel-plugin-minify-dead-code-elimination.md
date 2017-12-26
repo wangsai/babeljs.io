@@ -1,6 +1,6 @@
 # babel-plugin-minify-dead-code-elimination
 
-尽可能的内联绑定。尝试评估表达式，并执行不可访问的操作。
+尽可能的内联绑定。尝试评估表达式，并修剪无法到达的结果。
 
 ## 示例
 
@@ -68,7 +68,7 @@ require("babel-core").transform("code", {
 
 ## 可选项
 
-+ `keepFnName` - 防止插件删除函数名。适用于代码，具体取决于`fn.name`
-+ `keepFnArgs` - 防止插件删除函数参数。适用于代码，具体取决于`fn.length`
-+ `keepClassName` - 防止插件删除类名。 适用于代码，具体取决于`cls.name`
++ `keepFnName` - 防止插件删除函数名。适用于依赖于 `fn.name` 的代码
++ `keepFnArgs` - 防止插件删除函数参数。适用于依赖于 `fn.length` 的代码
++ `keepClassName` - 防止插件删除类名。 适用于依赖于 `cls.name` 的代码
 + `tdz` - TDZ的配置 (Temporal Dead Zone)(暂时性死区)
