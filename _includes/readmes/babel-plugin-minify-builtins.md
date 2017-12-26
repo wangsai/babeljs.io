@@ -1,6 +1,6 @@
 # babel-plugin-minify-builtins
 
-迷你的标准内建对象
+内建对象的迷你标准
 
 ## 示例
 
@@ -26,7 +26,7 @@ npm install babel-plugin-minify-builtins
 
 ## 使用
 
-### 通过 `.babelrc` (官方推荐)
+### 通过 `.babelrc` （推荐）
 
 **.babelrc**
 
