@@ -61,7 +61,7 @@ npm install babel-plugin-minify-constant-folding
 
 ## 使用
 
-### 通过 `.babelrc` (Recommended)
+### 通过 `.babelrc` （推荐）
 
 **.babelrc**
 
