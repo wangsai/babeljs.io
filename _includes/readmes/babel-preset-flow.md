@@ -1,34 +1,34 @@
 # babel-preset-flow
 
-> Babel preset for all Flow plugins.
+> 所有 Flow 的插件的 Babel preset 。
 
-This preset includes the following plugins:
+该 preset 包含以下这些插件:
 
 - [transform-flow-strip-types](https://babeljs.io/docs/plugins/transform-flow-strip-types/)
 
-## Example
+## 例子
 
-**In**
+**输入**
 
 ```javascript
 function foo(one: any, two: number, three?): string {}
 ```
 
-**Out**
+**输出**
 
 ```javascript
 function foo(one, two, three) {}
 ```
 
-## Installation
+## 安装
 
 ```sh
 npm install --save-dev babel-preset-flow
 ```
 
-## Usage
+## 使用
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc` (推荐)
 
 **.babelrc**
 
@@ -38,13 +38,13 @@ npm install --save-dev babel-preset-flow
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --presets flow script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {
