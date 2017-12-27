@@ -85,7 +85,7 @@
       year: 2016
       event: Modern Web UI
       event_link: http://www.modernwebui.org/
-      link: https://v.qq.com/iframe/player.html?vid=y0504cqxuiq&tiny=0&auto=0
+      link: https://player.youku.com/embed/XMzI2MTAyOTk5Ng==
     - title: Babel
       author: Sebastian McKenzie
       author_link: https://twitter.com/sebmck
@@ -99,7 +99,7 @@
       year: 2015
       event: MelbJS
       event_link: http://melbjs.com/
-      link: https://v.qq.com/iframe/player.html?vid=r0504sbo6ar&tiny=0&auto=0
+      link: https://player.youku.com/embed/XMzI2MTA1NTM0NA==
     - title: Babel Plugins - Writing Code That Writes Code
       author: Sebastiaan Deckers
       author_link: https://twitter.com/sebdeckers
@@ -113,14 +113,14 @@
       year: 2016
       event: js.la
       event_link: https://js.la/
-      link: https://v.qq.com/iframe/player.html?vid=x0504bqo4gp&tiny=0&auto=0
+      link: https://player.youku.com/embed/XMzI2MTA2MzY4MA==
     - title: Using Babel in a Futuristic Working Environment
       author: Kurtis Rainbolt-Greene
       author_link: https://twitter.com/krainboltgreene
       year: 2017
       event: js.la
       event_link: https://js.la/
-      link: https://v.qq.com/iframe/player.html?vid=j0504mifg4v&tiny=0&auto=0
+      link: https://player.youku.com/embed/XMzI2MTA2NjIwMA==
 - category: ASTs
   items:
     - title: Master the art of the AST (and take control of your JS)
@@ -129,25 +129,25 @@
       year: 2017
       event: Full Stack Fest
       event_link: https://2017.fullstackfest.com/
-      link: https://v.qq.com/iframe/player.html?vid=t0507871v2t&tiny=0&auto=0
+      link: https://player.youku.com/embed/XMzI2MTQxNDQyNA==
     - title: As Simple as an AST
       author: Pavithra Kodmad
       author_link: https://twitter.com/PKodmad
       year: 2017
       event: JSHeroes
       event_link: https://jsheroes.io/
-      link: https://v.qq.com/iframe/player.html?vid=s0507b1z67k&tiny=0&auto=0
+      link: https://player.youku.com/embed/XMzI2MTA3MDE4MA==
     - title: Harnessing The Power of Abstract Syntax Trees
       author: Jamund Ferguson
       author_link: https://twitter.com/xjamundx
       year: 2015
       event: UtahJS
       event_link: https://conf.utahjs.com/
-      link: https://v.qq.com/iframe/player.html?vid=r0508khuyrg&tiny=0&auto=0
+      link: https://player.youku.com/embed/XMzI2MTA5Njc2MA==
     - title: Code Transformation and Linting with ASTs Workshop
       author: Kent C. Dodds
       author_link: https://twitter.com/kentcdodds
       year: 2017
       event: PayPal (practice run with coworkers)
       event_link: https://kentcdodds.com/workshops/#code-transformation-and-linting
-      link: https://v.qq.com/iframe/player.html?vid=d0508e18shq&tiny=0&auto=0
+      link: https://player.youku.com/embed/XMzI2MTA3NTM0NA==
