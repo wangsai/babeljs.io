@@ -8,7 +8,7 @@ package: babel-preset-es2017
 
 > 如果你想保持最新版本，请使用 [env preset](/docs/plugins/preset-env/)
 
-这个 preset 依赖以下这些插件:
+这个 preset 包含以下这些插件:
 
 - [syntax-trailing-function-commas](/docs/plugins/syntax-trailing-function-commas/)
 - [transform-async-to-generator](/docs/plugins/transform-async-to-generator/)
@@ -23,7 +23,7 @@ package: babel-preset-es2017
 npm install --save-dev babel-cli babel-preset-es2017
 ```
 
-为 preset 创建 .babelrc 配置文件
+用 preset 创建 .babelrc 配置文件
 
 ```sh
 echo '{ "presets": ["es2017"] }' > .babelrc
