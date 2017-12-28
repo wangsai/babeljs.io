@@ -1,20 +1,20 @@
 # babel-preset-minify
 
-Babel preset for all minify plugins.
+包含所有 minify 插件的 Babel preset 。
 
-+ [Install](#install)
-+ [Usage](#usage)
-+ [Options](#options)
++ [安装](#安装)
++ [使用](#使用)
++ [选项](#选项)
 
-## Install
+## 安装
 
 ```sh
 npm install --save-dev babel-preset-minify
 ```
 
-## Usage
+## 使用
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc` (推荐)
 
 **.babelrc**
 
@@ -24,7 +24,7 @@ npm install --save-dev babel-preset-minify
 }
 ```
 
-or pass in options -
+或者添加选项 -
 
 ```json
 {
@@ -40,13 +40,13 @@ or pass in options -
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel script.js --presets minify
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {
@@ -54,20 +54,20 @@ require("babel-core").transform("code", {
 });
 ```
 
-## Options
+## 选项
 
-Two types of options:
+包含以下两种选择:
 
-1. 1-1 mapping with plugin
-2. The same option passed to multiple plugins
+1. 1-1 插件映射
+2. 相同选项传递给多个插件
 
-#### 1-1 mapping with plugin
+#### 1-1 插件映射
 
-+ `false` - disable plugin
-+ `true` - enable plugin
-+ `{ ...pluginOpts }` - enable plugin and pass pluginOpts to plugin
++ `false` - 禁用插件
++ `true` - 启用插件
++ `{ ...pluginOpts }` - 启用插件并将 pluginOpts 传递给插件。
 
-OptionName          | Plugin                                                         | DefaultValue
+选项名          | 插件                                                         | 默认值
 ----------          | ------                                                         | ------------
 booleans            | [transform-minify-booleans][booleans]                          | true
 builtIns            | [minify-builtins][builtIns]                                    | true
@@ -92,17 +92,17 @@ simplifyComparisons | [transform-simplify-comparison-operators][simplifyComparis
 typeConstructors    | [minify-type-constructors][typeConstructors]                   | true
 undefinedToVoid     | [transform-undefined-to-void][undefinedToVoid]                 | true
 
-#### The same option passed to multiple plugins
+#### 相同选项传递给多个插件
 
-+ When multiple plugins require the same option, it's easier to declare it in one place. These options are passed on to two or more plugins.
++ 当多个插件需要相同选项时，可以简单的声明在相同位置。这些选项会被传递到两个或更多的插件中。
 
-OptionName          | Plugins
+选项名          | 插件
 ----------          | -------
-keepFnName          | Passed to [mangle][mangle] & [deadcode][deadcode]
-keepClassName       | Passed to [mangle][mangle] & [deadcode][deadcode]
-tdz                 | Passed to [builtIns][builtIns], [evaluate][evaluate], [deadcode][deadcode], [removeUndefined][removeUndefined]
+keepFnName          | 通过 [mangle][mangle] & [deadcode][deadcode]
+keepClassName       | 通过 [mangle][mangle] & [deadcode][deadcode]
+tdz                 | 通过 [builtIns][builtIns], [evaluate][evaluate], [deadcode][deadcode], [removeUndefined][removeUndefined]
 
-**Examples**
+**例如**
 
 ```json
 {
@@ -129,7 +129,7 @@ tdz                 | Passed to [builtIns][builtIns], [evaluate][evaluate], [dea
     "keepFnName": true
   }]]
 }
-// is the same as
+// 等同于
 {
   "presets": [["minify", {
     "mangle": {
