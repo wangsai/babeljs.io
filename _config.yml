@@ -52,7 +52,7 @@ default_js:
   - "https://cdn.bootcss.com/lodash.js/4.16.3/lodash.min.js"
   - "https://cdn.bootcss.com/bootstrap/3.3.1/js/bootstrap.min.js"
   - "https://cdn.bootcss.com/clipboard.js/1.5.13/clipboard.min.js"
-  - "https://cdn.bootcss.com/docsearch.js/2.4.1/docsearch.min.js"
+  - "https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"
   - "/scripts/search.js"
   - "/scripts/clipboard.js"
   - "/scripts/open-in-repl.js"
