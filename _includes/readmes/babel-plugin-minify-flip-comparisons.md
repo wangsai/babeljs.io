@@ -1,6 +1,6 @@
 # babel-plugin-minify-flip-comparisons
 
-**备注:** 虽然这个插件没有以任何方式缩短输出，但它对基于重复的压缩算法(如gzip)进行优化。
+**备注:** 虽然这个插件不会以任何方式缩短输出，但它可以对基于重复的压缩算法（如 gzip）进行优化。
 
 ## 示例
 
@@ -22,7 +22,7 @@ if (null !== bar) {
 }
 ```
 
-## Installation
+## 安装
 
 ```sh
 npm install babel-plugin-minify-flip-comparisons
@@ -30,7 +30,7 @@ npm install babel-plugin-minify-flip-comparisons
 
 ## 使用
 
-### 通过 `.babelrc` (Recommended)
+### 通过 `.babelrc` （推荐）
 
 **.babelrc**
 

@@ -24,7 +24,7 @@ npm install babel-plugin-minify-guarded-expressions
 
 ## 使用
 
-### 通过 `.babelrc` (Recommended)
+### 通过 `.babelrc` （推荐）
 
 **.babelrc**
 
