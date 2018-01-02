@@ -6,20 +6,10 @@
   Babylon is a JavaScript parser used in <a href="https://github.com/babel/babel">Babel</a>.
 </p>
 
-<p align="center">
-  <a href="https://www.npmjs.com/package/babylon"><img alt="NPM Version" src="https://img.shields.io/npm/v/babylon.svg?style=flat"></a>
-  <a href="https://travis-ci.org/babel/babylon"><img alt="Travis Status" src="https://img.shields.io/travis/babel/babylon/master.svg?style=flat&label=travis"></a>
-  <a href="https://codecov.io/gh/babel/babylon"><img alt="Codecov Status" src="https://img.shields.io/codecov/c/github/babel/babylon/master.svg?style=flat"></a>
-</p>
-
  - The latest ECMAScript version enabled by default (ES2017).
  - Comment attachment.
  - Support for JSX, Flow, Typescript.
  - Support for experimental language proposals (accepting PRs for anything at least [stage-0](https://github.com/tc39/proposals/blob/master/stage-0-proposals.md)).
-
-## Contributing
-
-Check out [contributing.md](https://github.com/babel/babylon/blob/master/CONTRIBUTING.md)
 
 ## Credits
 
@@ -49,7 +39,7 @@ mind. When in doubt, use `.parse()`.
 - **allowSuperOutsideMethod**: TODO
 
 - **sourceType**: Indicate the mode the code should be parsed in. Can be
-  either `"script"` or `"module"`.
+  one of `"script"`, `"module"`, or `"unambiguous"`. Defaults to `"script"`. `"unambiguous"` will make Babylon attempt to _guess_, based on the presence of ES6 `import` or `export` statements. Files with ES6 `import`s and `export`s are considered `"module"` and are otherwise `"script"`.
 
 - **sourceFilename**: Correlate output AST nodes with their source filename.  Useful when generating code and source maps from the ASTs of multiple input files.
 
@@ -131,6 +121,7 @@ require("babylon").parse("code", {
 | `estree` ([repo](https://github.com/estree/estree)) | n/a |
 | `jsx` ([repo](https://facebook.github.io/jsx/)) | `<a attr="b">{s}</a>` |
 | `flow` ([repo](https://github.com/facebook/flow)) | `var a: string = "";` |
+| `flowComments` ([docs](https://flow.org/en/docs/types/comments/)) | `/*:: type Foo = {...}; */` |
 | `typescript` ([repo](https://github.com/Microsoft/TypeScript)) | `var a: string = "";` |
 | `doExpressions` | `var a = do { if (true) { 'hi'; } };` |
 | `objectRestSpread` ([proposal](https://github.com/tc39/proposal-object-rest-spread)) | `var a = { b, ...c };` |
