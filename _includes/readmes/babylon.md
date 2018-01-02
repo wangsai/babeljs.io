@@ -9,7 +9,7 @@
  - 默认启用最新的 ECMAScript 版本(ES2017)。
  - 附加注释。
  - 支持 JSX, Flow, Typescript 语法。
- - 支持实验阶段的语法提案(最低支持到 [stage-0](https://github.com/tc39/proposals/blob/master/stage-0-proposals.md) 阶段的 PR).
+ - 支持实验阶段的语法提案（支持至少达到 [stage-0](https://github.com/tc39/proposals/blob/master/stage-0-proposals.md) 阶段的 PR）。
 
 ## 鸣谢
 
@@ -21,7 +21,7 @@
 
 ### `babylon.parseExpression(code, [options])`
 
-`parse()` 将提供的 `code` 解析为完整的 ECMAScript 程序，而 `parseExpression()` 试图解析表达式，并会考虑性能问题。如果有疑问，请使用 `.parse()` 。
+`parse()` 将提供的 `code` 解析为完整的 ECMAScript 程序，而 `parseExpression()` 试图解析表达式，并会考虑性能问题。如果有疑问，请使用 `.parse()`。
 
 ### 选项
 
@@ -31,7 +31,7 @@
 
 - **allowSuperOutsideMethod**: TODO
 
-- **sourceType**: 表明代码应该解析的模式。可以是 `"script"`，`"module"` 或者 `"unambiguous"` 中任意一个。默认为 `"script"`。`"unambiguous"` 将使得 Babylon 尝试根据 ES6 的 `import` 或者 `export` 声明来进行_推测_。具有 ES6 `import` 和 `export` 的文件被认为是 `"module"`，否则被认为是 `"script"` 。
+- **sourceType**: 表明代码应该解析的模式。可以是 `"script"`，`"module"` 或者 `"unambiguous"` 中任意一个。默认为 `"script"`。`"unambiguous"` 将使得 Babylon 尝试根据 ES6 的 `import` 或者 `export` 声明来进行_推测_。具有 ES6 `import` 和 `export` 的文件被认为是 `"module"`，否则被认为是 `"script"`。
 
 - **sourceFilename**: 将输出的 AST 节点与其源文件名相关联。多用于多个输入文件的 AST 生成代码和 source map 时。
 
@@ -57,7 +57,7 @@ Babylon 根据 [Babel AST 的格式][Babel AST format] 生成 AST 。它基于 [
 - [指令][Program]和[语法块][BlockStatement]的 `directives` 字段中包含额外的[指令][Directive]和[指令字符集][DirectiveLiteral]
 - [函数表达式][FunctionExpression]中的[类方法][ClassMethod]，[对象属性][ObjectProperty]和[对象方法][ObjectMethod]值属性的属性被强制/带入主方法节点。
 
-JSX 的 AST 代码基于 [Facebook JSX AST][] 添加了一个节点类型:
+JSX 的 AST 代码基于 [Facebook JSX AST][] 并额外添加了一个节点类型:
 
 - `JSXText`
 
@@ -86,7 +86,7 @@ JSX 的 AST 代码基于 [Facebook JSX AST][] 添加了一个节点类型:
 
 ### Semver
 
-Babylon 在大多数情况下遵循 semver 。唯一需要注意的是，某些规范遵从性错误的修复可能会在下一个补丁版本中发布。
+Babylon 在大多数情况下遵循 semver。唯一需要注意的是，某些规范遵从性错误的修复可能会在下一个补丁版本中发布。
 
 例如：我们推送了修复早期错误的代码，就像[#107](https://github.com/babel/babylon/pull/107) - 多个文件默认导出多个。这被视为一个错误进行修复，即时它会导致构建失败。
 
@@ -142,9 +142,9 @@ require("babylon").parse("code", {
 
 我们目前不愿意承诺支持插件的 API 或者由此产生的生态系统(维护 Babel 的插件系统目前足够使用)。目前还不清楚如何使 API 更有效，并且会限制重构和优化代码库的能力。
 
-我们目前对那些想要创建定制语法的用户建议是 fork Babylon 。
+我们目前对那些想要创建定制语法的用户建议是 fork Babylon。
 
-要使用自定义解析器，可以通过将其 npm 包名称添加到 `.babelrc`，或者如何使用 JavaScript 。
+要使用自定义解析器，可以通过将其 npm 包名称添加到 `.babelrc`，或者在用 JavaScript 的时候通过 require 引入它。
 
 ```json
 {
