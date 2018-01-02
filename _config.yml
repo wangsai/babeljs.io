@@ -53,7 +53,7 @@ default_js:
   - "https://cdn.bootcss.com/bootstrap/3.3.1/js/bootstrap.min.js"
   - "https://cdn.bootcss.com/clipboard.js/1.5.13/clipboard.min.js"
   - "https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"
-  - "/scripts/search.js"
+  - "/scripts/search.js?v=1"
   - "/scripts/clipboard.js"
   - "/scripts/open-in-repl.js"
 
