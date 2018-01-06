@@ -54,3 +54,5 @@
           url: http://nodejs.cn/
         - title: webpack 中文
           url: https://doc.webpack-china.org/
+        - title: parcel 中文
+          url: https://www.parceljs.io/
