@@ -1,12 +1,12 @@
 # gulp-babel-minify
 
-## Installation
+## 安装
 
 ```sh
 npm install gulp-babel-minify --save-dev
 ```
 
-## Usage
+## 使用
 
 ```js
 const gulp = require("gulp");
@@ -29,13 +29,13 @@ gulp.task("minify", () =>
 gulpBabelMinify(minifyOptions, overrides);
 ```
 
-### minifyOptions
+### minify 选项
 
-These are passed on to the minify preset. Refer https://github.com/babel/minify/tree/master/packages/babel-preset-minify#options. Default `{}`
+这些都是传递给 minify preset 的。请参阅 https://github.com/babel/minify/tree/master/packages/babel-preset-minify#options. 默认值为 `{}`
 
-### Overrides
+### 重写
 
-Default: `{}`
+默认为: `{}`
 
-+ `babel`: Use a custom `babel-core`
-+ `minifyPreset`: Use a custom `babel-preset-minify`
++ `babel`: 使用自定义的 `babel-core`
++ `minifyPreset`: 使用自定义的 `babel-preset-minify`
