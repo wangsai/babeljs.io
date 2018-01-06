@@ -1,14 +1,14 @@
 # babel-plugin-external-helpers
 
-## Installation
+## 安装
 
 ```sh
 npm install --save-dev babel-plugin-external-helpers
 ```
 
-## Usage
+## 使用
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc` (推荐)
 
 **.babelrc**
 
@@ -18,13 +18,13 @@ npm install --save-dev babel-plugin-external-helpers
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins external-helpers script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {
