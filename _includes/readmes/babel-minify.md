@@ -1,18 +1,18 @@
 # babel-minify
 
-Node API and CLI
+Node API 和 CLI
 
 [![npm](https://img.shields.io/npm/v/babel-minify.svg?maxAge=2592000)](https://www.npmjs.com/package/babel-minify)
 
-Use `babel-minify` if you don't already use babel (as a preset) or want to run it standalone.
+如果你还没有使用 babel (作为 preset) 或想要独立运行它，你可以使用 `babel-minify` 。
 
-## Installation
+## 安装
 
 ```sh
 npm install babel-minify --save-dev
 ```
 
-## Usage
+## 使用
 
 ### Node API
 
@@ -40,48 +40,48 @@ const minify = require("babel-minify");
 minify(input, minifyOptions, overrides)
 ```
 
-### minifyOptions
+### minify 选项
 
-Refer [babel-preset-minify options](https://github.com/babel/minify/tree/master/packages/babel-preset-minify#options)
+请参阅 [babel-preset-minify options](https://github.com/babel/minify/tree/master/packages/babel-preset-minify#options)
 
-### overrides
+### 重写
 
-+ `babel`: Custom babel
-+ `minifyPreset`: Custom minify preset
-+ `inputSourceMap`: Input Sourcemap
++ `babel`: 自定义 babel
++ `minifyPreset`: 自定义 minify preset
++ `inputSourceMap`: 输入 Sourcemap
 + `sourceMaps`: [Boolean]
 
-## CLI Options
+## CLI 选项
 
 ```
 minify input.js [options]
 ```
 
-### Simple preset options
+### 单一 preset 选项
 
-For simple options, use `--optionName` in CLI
+对于单一选项来说，你可以在 CLI 中使用 `--optionName` 。
 
-Refer [preset's 1-1 options](https://github.com/babel/minify/tree/master/packages/babel-preset-minify#1-1-mapping-with-plugin) for the list of options
+请参阅 [preset's 1-1 options](https://github.com/babel/minify/tree/master/packages/babel-preset-minify#1-1-mapping-with-plugin) 详细列表
 
-Example:
+例如:
 
 ```
 minify input.js --mangle false
 ```
 
-### Nested preset options
+### 嵌套 preset 选项
 
-Usage: `--optionName.featureName`
+使用: `--optionName.featureName`
 
-Example:
+例如:
 
 ```sh
 minify input.js --mangle.keepClassName --deadcode.keepFnArgs --outFile input.min.js
 ```
 
-Refer the corresponding plugins to know the list of options it takes
+请参阅相应的插件了解其对应所需的选项列表。
 
-### IO options
+### IO 选项
 
-+ `--out-file path/to/file.min.js`: Output filename. Used only when reading from STDIN / a single input file
-+ `--out-dir path/to/dir`: Output Directory.
++ `--out-file path/to/file.min.js`: 输出文件名。只能在读取 STDIN /单输入文件时使用。
++ `--out-dir path/to/dir`: 输出路径。
