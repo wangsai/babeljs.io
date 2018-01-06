@@ -49,7 +49,6 @@ third_party_js:
 <div class="container">
   <div class="row featurette text-center featurette--get-started">
     <h2>准备好开始了吗?</h2>
-
     <div class="col-lg-6">
       <h3>安装 Babel CLI 和 preset</h3>
       <div class="text-left">
@@ -61,7 +60,7 @@ npm install --save-dev babel-cli babel-preset-env
       </div>
     </div>
     <div class="col-lg-6">
-      <h3>创建一个 <a href="/docs/usage/babelrc"><code>.babelrc</code></a> 文件（或者使用你的 <a href="/docs/usage/babelrc#use-via-packagejson">package.json</a>）</h3>
+      <h3>创建 <a href="/docs/usage/babelrc"><code>.babelrc</code></a> 文件（或使用 <a href="/docs/usage/babelrc#use-via-packagejson">package.json</a>）</h3>
       <div class="text-left">
 <div markdown="1">
 ```json
