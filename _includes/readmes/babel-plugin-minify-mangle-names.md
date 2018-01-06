@@ -1,10 +1,10 @@
 # babel-plugin-minify-mangle-names
 
-Context- and scope- aware variable renaming.
+Context- 和 scope- 感知变量重命名。
 
-## Example
+## 例如
 
-**In**
+**输入**
 
 ```javascript
 var globalVariableName = 42;
@@ -16,7 +16,7 @@ function foo() {
 }
 ```
 
-**Out**
+**输出**
 
 ```javascript
 var globalVariableName = 42;
@@ -28,39 +28,39 @@ function foo() {
 }
 ```
 
-## Installation
+## 安装
 
 ```sh
 npm install babel-plugin-minify-mangle-names
 ```
 
-## Usage
+## 使用
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc` (推荐)
 
 **.babelrc**
 
 ```json
-// without options
+// 不包含选项
 {
   "plugins": ["minify-mangle-names"]
 }
 ```
 
 ```json
-// with options
+// 包含选项
 {
   "plugins": ["minify-mangle-names", { "exclude": { "foo": true, "bar": true} }]
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins minify-mangle-names script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {
@@ -68,10 +68,10 @@ require("babel-core").transform("code", {
 });
 ```
 
-## Options
+## 选项
 
-+ `exclude` - A plain JS Object with keys as identifier names and values indicating whether to exclude
-+ `eval` - mangle identifiers in scopes accessible by eval
-+ `keepFnName` - prevent mangler from altering function names. Useful for code depending on `fn.name`
-+ `topLevel` - mangle topLevel Identifiers
-+ `keepClassName` - prevent mangler from altering class names.
++ `exclude` - 一个普通的 JS 对象，其中键为标识名，值标明是否排除
++ `eval` - eval 是 可访问作用域中的 mangle 标识符
++ `keepFnName` - 防止 mangler 改变函数名称。对于依赖 `fn.name` 的代码有效。
++ `topLevel` - mangle 顶级标识
++ `keepClassName` - 防止 mangler 改变类名
