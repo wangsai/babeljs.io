@@ -57,4 +57,4 @@ console.log(result);
 
 `boolean`，默认为 `false` 。
 
-启用此选项可强制为 JavaScript 提供语法高亮(对于非终端)；重写 `highlightCode` 。
+启用此选项可强制为 JavaScript 提供语法高亮(对于非终端)；覆盖 `highlightCode` 。

@@ -63,7 +63,7 @@ minify input.js [options]
 
 请参阅 [preset's 1-1 options](https://github.com/babel/minify/tree/master/packages/babel-preset-minify#1-1-mapping-with-plugin) 详细列表
 
-例如:
+例如：
 
 ```
 minify input.js --mangle false
@@ -71,9 +71,9 @@ minify input.js --mangle false
 
 ### 嵌套 preset 选项
 
-使用: `--optionName.featureName`
+使用： `--optionName.featureName`
 
-例如:
+例如：
 
 ```sh
 minify input.js --mangle.keepClassName --deadcode.keepFnArgs --outFile input.min.js
@@ -83,5 +83,5 @@ minify input.js --mangle.keepClassName --deadcode.keepFnArgs --outFile input.min
 
 ### IO 选项
 
-+ `--out-file path/to/file.min.js`: 输出文件名。只能在读取 STDIN /单输入文件时使用。
++ `--out-file path/to/file.min.js`: 输出文件名。只能在从标准输入/单输入文件读取时使用。
 + `--out-dir path/to/dir`: 输出路径。
