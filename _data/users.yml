@@ -80,8 +80,8 @@
   url: https://nodesource.com/
   logo: nodesource.svg
 - name: MongoDB
-  url: https://mongodb.com/
-  logo: mongodb.jpg
+  url: https://www.mongodb.com/
+  logo: mongodb.svg
 - name: Envato
   url: http://www.envato.com/
   logo: envato.png
@@ -622,3 +622,9 @@
 - name: iLoveCoding
   url: https://ilovecoding.org
   logo: ilovecoding.svg
+- name: hipages
+  url: https://hipages.com.au
+  logo: hipages.svg
+- name: Weblio
+  url: https://ejje.weblio.jp/
+  logo: weblio.svg
