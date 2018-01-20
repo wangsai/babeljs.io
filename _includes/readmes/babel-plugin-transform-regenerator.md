@@ -1,10 +1,9 @@
 # babel-plugin-transform-regenerator
 
-> Transform async/generator functions with [regenerator](https://github.com/facebook/regenerator)
+>  使用 [regenerator](https://github.com/facebook/regenerator) 转译 async/generator 函数 
+## 示例 
 
-## Example
-
-**In**
+**输入**
 
 ```javascript
 function* a() {
@@ -12,7 +11,7 @@ function* a() {
 }
 ```
 
-**Out**
+**输出**
 
 ```javascript
 var _marked = [a].map(regeneratorRuntime.mark);
@@ -34,17 +33,17 @@ function a() {
 }
 ```
 
-## Installation
+## 安装
 
 ```sh
 npm install --save-dev babel-plugin-transform-regenerator
 ```
 
-## Usage
+## 用法
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc` (推荐)
 
-Without options:
+无选项:
 
 ```json
 {
@@ -52,7 +51,7 @@ Without options:
 }
 ```
 
-With options:
+选项:
 
 |name|default value|
 |---|---|
@@ -72,13 +71,13 @@ With options:
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins transform-regenerator script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {
