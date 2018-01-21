@@ -1,7 +1,7 @@
 ---
 layout: docs
-title: Minify flip comparisons
-description: While this plugin doesn’t shorten the output in any way, it does optimize it for repetition-based compression algorithms such as gzip
+title: Minify - 翻转比较(flip comparisons)
+description: 虽然插件不会以任何方式减少输出，但是它基于重复的内容进行压缩算法优化，例如 gzip
 permalink: /docs/plugins/minify-flip-comparisons/
 package: babel-plugin-minify-flip-comparisons
 package_source: babel-minify

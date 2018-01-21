@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Minify infinity
+title: Minify - 无穷大(infinity)
 description:
 permalink: /docs/plugins/minify-infinity/
 package: babel-plugin-minify-infinity
