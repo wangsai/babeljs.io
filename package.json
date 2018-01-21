@@ -64,6 +64,7 @@
     "emotion": "^8.0.2-12",
     "gh-pages": "^1.0.0",
     "lodash.debounce": "^4.0.8",
+    "lodash.camelcase": "^4.3.0",
     "lz-string": "^1.4.4",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
