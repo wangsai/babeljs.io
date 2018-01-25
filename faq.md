@@ -39,7 +39,7 @@ const user = {
 
 Babel 假设所有输入的代码都是 ES2015 模块。ES2015 模块是隐式严格模式，因此这意味着，顶层 `this` 在浏览器中不是 `window`，在 Node.js 中也不是 `exports`。
 
-如果你不想要这种行为，那么你可以选择在 [es2015-modules-transform](http://babeljs.io/docs/plugins/transform-es2015-modules-commonjs/#usage) 中禁用 `strict`。
+如果你不想要这种行为，那么你可以选择在 [es2015-modules-transform](/docs/plugins/transform-es2015-modules-commonjs/#usage) 中禁用 `strict`。
 
 **请注意：** 如果你这样做，你将愿意偏离规范，这可能会导致未来的互操作问题。
 
@@ -64,7 +64,7 @@ Babel 6 的核心是[插件](/docs/plugins)。你需要什么插件完全取决�
 npm install babel-preset-env babel-preset-react babel-preset-stage-2 --save-dev
 ```
 
-也可以查看我们的[配置 Babel 6](http://babeljs.io/blog/2015/10/31/setting-up-babel-6)博客文章。
+也可以查看我们的[配置 Babel 6](/blog/2015/10/31/setting-up-babel-6)博客文章。
 
 ## 所有的文档都到哪里去了？！
 

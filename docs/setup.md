@@ -42,7 +42,7 @@ custom_js_with_timestamps:
       </p>
 
       <p>
-        首先，你可以使用转换 ES2015+ 的 <a href="https://babeljs.io/docs/plugins/preset-env/">env preset</a> 。 
+        首先，你可以使用转换 ES2015+ 的 <a href="/docs/plugins/preset-env/">env preset</a> 。 
       </p>
 
 <!--lint disable no-shortcut-reference-link, no-undefined-references-->

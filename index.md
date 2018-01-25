@@ -84,8 +84,8 @@ npm install --save-dev babel-cli babel-preset-env
       <h2 id="es2015-and-beyond">ES2015 及更高版本</h2>
       <p>
         Babel 通过语法转换器支持最新版本的 JavaScript 。
-        这些<a href="https://babeljs.io/docs/plugins/">插件</a>允许你<strong>立刻</strong>使用新语法，无需等待浏览器支持。
-        查看 <a href="https://babeljs.io/docs/plugins/preset-env">env preset</a> 开始使用 Babel 。
+        这些<a href="/docs/plugins/">插件</a>允许你<strong>立刻</strong>使用新语法，无需等待浏览器支持。
+        查看 <a href="/docs/plugins/preset-env">env preset</a> 开始使用 Babel 。
       </p>
 
       <p>你可以通过以下方式安装 preset </p>
@@ -218,7 +218,7 @@ npm install --save-dev babel-polyfill
 
     <div class="col-md-7">
       <h2 id="jsx-and-flow">JSX 和 Flow</h2>
-      <p>Babel 能够转换 JSX 语法并去除类型注释。查看 <a href="https://babeljs.io/docs/plugins/preset-react/">React preset</a> 开始使用。与 <a href="https://github.com/babel/babel-sublime">babel-sublime</a> 同时使用将语法高亮提高到一个全新的层次。</p>
+      <p>Babel 能够转换 JSX 语法并去除类型注释。查看 <a href="/docs/plugins/preset-react/">React preset</a> 开始使用。与 <a href="https://github.com/babel/babel-sublime">babel-sublime</a> 同时使用将语法高亮提高到一个全新的层次。</p>
 
       <p>你可以通过以下方式安装 preset </p>
 <div markdown="1">
